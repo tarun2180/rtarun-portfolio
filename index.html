@@ -1060,93 +1060,186 @@
         }
 
         /* About Section */
-        .about {
-            background: var(--bg-secondary);
+        .contact {
+            background: var(--bg-primary);
         }
 
-        .about-content {
+        .contact-content {
             display: grid;
             grid-template-columns: 1fr;
             gap: 3rem;
         }
 
         @media (min-width: 992px) {
-            .about-content {
-                grid-template-columns: 2fr 1fr;
+            .contact-content {
+                grid-template-columns: 1fr 1fr;
                 gap: 4rem;
             }
         }
 
-        .about-text {
+        .contact-info {
             background: var(--bg-card);
             border-radius: var(--radius-2xl);
-            padding: 2.5rem;
+            padding: 3rem;
             box-shadow: var(--shadow-lg);
-            transition: all var(--transition-normal);
         }
 
-        .about-text:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .about-description {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .about-description p {
+        .contact-info h3 {
+            font-size: 2rem;
+            font-weight: 700;
             margin-bottom: 1.5rem;
-        }
-
-        .about-description p:last-child {
-            margin-bottom: 0;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .stat-card {
-            background: var(--bg-card);
-            border-radius: var(--radius-xl);
-            padding: 2rem;
-            box-shadow: var(--shadow-lg);
-            text-align: center;
-            transition: all var(--transition-bounce);
-            position: relative;
-            overflow: hidden;
-            height: 100%;
-        }
-
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
             background: var(--gradient-primary);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.5s ease;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .stat-card:hover::before {
-            transform: scaleX(1);
+        .contact-info p {
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            font-size: 1.125rem;
         }
 
-        .stat-card:hover {
-            transform: translateY(-10px);
+        .contact-details {
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding: 1.25rem;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-xl);
+            transition: all var(--transition-normal);
+            cursor: pointer;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-md);
+            background: var(--bg-primary);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item div {
+            flex: 1;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+        }
+
+        .contact-item p {
+            color: var(--text-secondary);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all var(--transition-bounce);
+            font-size: 1.25rem;
+        }
+
+        .social-link:hover {
+            transform: scale(1.1) rotate(10deg);
+            background: var(--gradient-primary);
+            color: white;
             box-shadow: var(--shadow-glow);
         }
 
-        .stat-number {
-            font-size: 3rem;
+        .contact-form {
+            background: var(--bg-card);
+            border-radius: var(--radius-2xl);
+            padding: 3rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1.25rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            transition: all var(--transition-normal);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+            background: var(--bg-primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group label {
+            position: absolute;
+            top: 1.25rem;
+            left: 1.25rem;
+            color: var(--text-tertiary);
+            transition: all var(--transition-normal);
+            pointer-events: none;
+            background: transparent;
+            padding: 0 0.5rem;
+        }
+
+        .form-group input:focus + label,
+        .form-group textarea:focus + label,
+        .form-group input:not(:placeholder-shown) + label,
+        .form-group textarea:not(:placeholder-shown) + label {
+            top: -0.75rem;
+            left: 1rem;
+            font-size: 0.875rem;
+            color: var(--primary);
+            font-weight: 600;
+            background: var(--bg-card);
         }
     </style>
 </head>
@@ -1466,40 +1559,93 @@
     </section>
 
     <!-- Contact Section (adapted for new styling) -->
-    <section id="contact" class="bg-secondary py-16 px-4">
-        <div class="container mx-auto max-w-2xl text-center">
-            <header class="section-header">
-                <p class="section-subtitle">Let's Connect</p>
-                <h2 class="section-title text-text-primary">Get In Touch</h2>
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <div class="section-subtitle">Get in touch</div>
+                <h2 class="section-title">Let's Connect</h2>
                 <div class="section-divider"></div>
-                <p class="section-description text-text-secondary">
-                    Have a question, a project idea, or just want to say hello? I'd love to hear from you!
+                <p class="section-description">
+                    Ready to collaborate on the next big innovation?
                 </p>
-            </header>
-            <form action="#" method="POST" class="bg-card p-8 rounded-2xl shadow-lg text-text-primary">
-                <div class="mb-6">
-                    <label for="name" class="block text-left text-text-secondary text-sm font-bold mb-2">Name:</label>
-                    <input type="text" id="name" name="name" class="shadow appearance-none border border-border-color rounded-lg w-full py-3 px-4 text-text-primary leading-tight focus:outline-none focus:ring-2 focus:ring-primary bg-bg-secondary" placeholder="Your Name" required>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info scroll-reveal-left">
+                    <h3>Get In Touch</h3>
+                    <p>
+                        I'm always excited to discuss new opportunities, collaborate on innovative projects, 
+                        or simply chat about the latest in AI and technology. Let's create something amazing together!
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item" onclick="openWhatsApp()">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <strong>Phone</strong>
+                                <p>+91 9618182180</p>
+                            </div>
+                        </div>
+                        <div class="contact-item" onclick="openEmail()">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <strong>Email</strong>
+                                <p>tarunchoudaryramineni@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <strong>Location</strong>
+                                <p>Guntur, Andhra Pradesh, India</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://github.com/tarun2180" class="social-link" title="GitHub" aria-label="Visit GitHub Profile" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/tarun-chowdary-175b4a351/" class="social-link" title="LinkedIn" aria-label="Visit LinkedIn Profile" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:tarunchoudaryramineni@gmail.com" class="social-link" title="Send Email" aria-label="Send Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="mb-6">
-                    <label for="email" class="block text-left text-text-secondary text-sm font-bold mb-2">Email:</label>
-                    <input type="email" id="email" name="email" class="shadow appearance-none border border-border-color rounded-lg w-full py-3 px-4 text-text-primary leading-tight focus:outline-none focus:ring-2 focus:ring-primary bg-bg-secondary" placeholder="your.email@example.com" required>
-                </div>
-                <div class="mb-8">
-                    <label for="message" class="block text-left text-text-secondary text-sm font-bold mb-2">Message:</label>
-                    <textarea id="message" name="message" rows="6" class="shadow appearance-none border border-border-color rounded-lg w-full py-3 px-4 text-text-primary leading-tight focus:outline-none focus:ring-2 focus:ring-primary bg-bg-secondary" placeholder="Your message..." required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary w-full md:w-auto">
-                    Send Message <i class="fas fa-paper-plane ml-2"></i>
-                </button>
-            </form>
-            <div class="mt-8 flex justify-center space-x-6 text-2xl">
-                <a href="https://www.linkedin.com/in/tarun-chowdary-175b4a351/" class="text-text-secondary hover:text-primary transition duration-300"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/tarun2180" class="text-text-secondary hover:text-primary transition duration-300"><i class="fab fa-github"></i></a>
-                <a href="tarunchoudaryramineni@gmail.com" class="text-text-secondary hover:text-primary transition duration-300"><i class="fab fa-mail"></i></a>
+
+                <form class="contact-form scroll-reveal-right" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder=" " required>
+                        <label>Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder=" " required>
+                        <label>Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subject" placeholder=" " required>
+                        <label>Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder=" " rows="5" required></textarea>
+                        <label>Your Message</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
             </div>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-8 px-4 text-center">
@@ -1556,6 +1702,134 @@
                     document.body.style.overflow = '';
                 }
             });
+
+            // WhatsApp and Email Integration
+        function openWhatsApp() {
+            const phoneNumber = '+919618182180';
+            const message = encodeURIComponent('Hello Tarun! I found your portfolio and would like to connect with you.');
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        function openEmail() {
+            const email = 'tarunchoudaryramineni@gmail.com';
+            const subject = encodeURIComponent('Portfolio Inquiry');
+            const body = encodeURIComponent('Hello Tarun,\n\nI came across your portfolio and would like to discuss potential opportunities.\n\nBest regards,');
+            const mailtoURL = `mailto:${email}?subject=${subject}&body=${body}`;
+            window.location.href = mailtoURL;
+        }
+
+        // Enhanced Form Handler with Email Integration
+        class FormHandler {
+            constructor() {
+                this.form = document.getElementById('contactForm');
+                this.init();
+            }
+
+            init() {
+                if (this.form) {
+                    this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+                }
+            }
+
+            async handleSubmit(e) {
+                e.preventDefault();
+                
+                const submitBtn = this.form.querySelector('button[type="submit"]');
+                const originalHTML = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<span class="loading"></span> Sending...';
+                submitBtn.disabled = true;
+                
+                // Get form data
+                const formData = new FormData(this.form);
+                const data = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    subject: formData.get('subject'),
+                    message: formData.get('message')
+                };
+
+                try {
+                    // Send email using EmailJS or similar service
+                    await this.sendEmail(data);
+                    this.showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+                    this.form.reset();
+                } catch (error) {
+                    console.error('Error sending email:', error);
+                    this.showNotification('Failed to send message. Please try again or contact me directly.', 'error');
+                }
+                
+                submitBtn.innerHTML = originalHTML;
+                submitBtn.disabled = false;
+            }
+
+            async sendEmail(data) {
+                // Simulate email sending - replace with actual email service
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        // In a real implementation, you would integrate with:
+                        // - EmailJS
+                        // - Formspree
+                        // - Netlify Forms
+                        // - Your own backend API
+                        
+                        // For now, we'll create a mailto link as fallback
+                        const subject = encodeURIComponent(`Portfolio Contact: ${data.subject}`);
+                        const body = encodeURIComponent(
+                            `Name: ${data.name}\n` +
+                            `Email: ${data.email}\n` +
+                            `Subject: ${data.subject}\n\n` +
+                            `Message:\n${data.message}`
+                        );
+                        
+                        // Open default email client
+                        window.location.href = `mailto:tarunchoudaryramineni@gmail.com?subject=${subject}&body=${body}`;
+                        
+                        resolve();
+                    }, 2000);
+                });
+            }
+
+            showNotification(message, type = 'info') {
+                const notification = document.createElement('div');
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    padding: 1rem 1.5rem;
+                    border-radius: 12px;
+                    color: white;
+                    font-weight: 600;
+                    z-index: 10000;
+                    transform: translateX(100%);
+                    transition: transform 0.3s ease;
+                    background: ${type === 'success' ? 'linear-gradient(135deg, #10b981 0%, #34d399 100%)' : 
+                                type === 'error' ? 'linear-gradient(135deg, #ef4444 0%, #f87171 100%)' :
+                                'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)'};
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                    max-width: 300px;
+                    font-size: 0.9rem;
+                `;
+                notification.textContent = message;
+                
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(0)';
+                }, 100);
+                
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(100%)';
+                    setTimeout(() => {
+                        if (notification.parentNode) {
+                            notification.parentNode.removeChild(notification);
+                        }
+                    }, 300);
+                }, 4000);
+            }
+        }
+
 
             // Close mobile menu when a link is clicked
             document.querySelectorAll('.nav-link').forEach(link => {

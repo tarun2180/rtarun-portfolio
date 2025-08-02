@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ramineni Tarun Chowdary - AI Engineer & Frontend Developer</title>
-    <!-- Font Awesome for icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- Google Fonts - Outfit & Space Grotesk -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS CDN - Included for utility classes if needed alongside custom CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Ultra-Modern CSS Variables */
@@ -1059,7 +1056,376 @@
             border-radius: var(--radius-full);
         }
 
-        /* About Section */
+        /* About Section (Updated for futuristic design) */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+        @media (min-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr 1.2fr;
+                align-items: center;
+            }
+        }
+        .about-text .about-description {
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            line-height: 1.75;
+            color: var(--text-secondary);
+        }
+        .about-text .about-description:last-child {
+            margin-bottom: 0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            position: relative;
+            padding: 2rem;
+            border-radius: var(--radius-3xl);
+            background: var(--bg-card);
+            box-shadow: var(--shadow-xl);
+            isolation: isolate;
+        }
+        .stats-grid::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-primary);
+            z-index: -1;
+            margin: -2px; /* border thickness */
+            border-radius: inherit;
+            opacity: 0.1;
+            transition: opacity 0.5s ease;
+        }
+        .stats-grid:hover::before {
+            opacity: 0.3;
+        }
+        .stat-card {
+            text-align: center;
+            padding: 2rem 1rem;
+            border-radius: var(--radius-2xl);
+            background: var(--bg-secondary);
+            transition: all var(--transition-bounce);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .stat-card:hover::before {
+            opacity: 0.1;
+        }
+        .stat-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-glow);
+        }
+        .stat-card .stat-number {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+            transition: color var(--transition-normal);
+        }
+        .stat-card .stat-number::after {
+            content: '+';
+        }
+        .stat-card p {
+            position: relative;
+            z-index: 1;
+            color: var(--text-tertiary);
+            transition: color var(--transition-normal);
+        }
+        .stat-card:hover p {
+            color: var(--text-primary);
+        }
+        .stat-card i {
+            transition: transform var(--transition-bounce);
+        }
+        .stat-card:hover i {
+            transform: scale(1.1);
+        }
+
+        /* Skills Section (Updated for futuristic design) */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .skill-category {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: var(--radius-3xl);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-normal);
+        }
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                from 0deg,
+                rgba(99, 102, 241, 0.2) 0deg,
+                rgba(99, 102, 241, 0) 90deg,
+                rgba(99, 102, 241, 0) 180deg,
+                rgba(99, 102, 241, 0.2) 270deg,
+                rgba(99, 102, 241, 0.4) 360deg
+            );
+            animation: skillBorderRotate 10s linear infinite;
+            z-index: -1;
+            border-radius: 2rem;
+            opacity: 0.5;
+            transition: opacity 0.5s;
+        }
+        .skill-category:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-2xl);
+        }
+        .skill-category:hover::before {
+            opacity: 1;
+        }
+        @keyframes skillBorderRotate {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .skill-category h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .skill-category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 1rem;
+        }
+        .skill-category li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: all var(--transition-normal);
+        }
+        .skill-category li i {
+            font-size: 1.25rem;
+            color: var(--primary);
+            transition: transform var(--transition-normal);
+        }
+        .skill-category li:hover {
+            color: var(--text-primary);
+            transform: translateX(10px);
+        }
+        .skill-category li:hover i {
+            transform: scale(1.2);
+        }
+        .skill-category .icon-ai { color: #f43f5e; }
+        .skill-category .icon-dev { color: #06b6d4; }
+        .skill-category .icon-tools { color: #f59e0b; }
+
+        /* Experience Section (Updated for futuristic design) */
+        .experience-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: var(--border-color);
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr 2px 1fr;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            .experience-timeline::before {
+                left: 1rem;
+                transform: translateX(0);
+            }
+        }
+        .timeline-item:nth-child(even) .timeline-content {
+            grid-column: 3 / 4;
+        }
+        @media (max-width: 768px) {
+            .timeline-item:nth-child(even) .timeline-content {
+                grid-column: 1 / 2;
+            }
+        }
+        .timeline-item-center {
+            position: relative;
+            grid-column: 2 / 3;
+            width: 2px;
+            height: 100%;
+            background: var(--gradient-primary);
+            display: flex;
+            justify-content: center;
+        }
+        @media (max-width: 768px) {
+            .timeline-item-center {
+                display: none;
+            }
+        }
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            background: var(--gradient-primary);
+            border: 2px solid var(--bg-card);
+            border-radius: var(--radius-full);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+            animation: dotGlow 2s ease-in-out infinite alternate;
+        }
+        @keyframes dotGlow {
+            from { box-shadow: 0 0 10px rgba(99, 102, 241, 0.5); }
+            to { box-shadow: 0 0 20px rgba(99, 102, 241, 0.8), 0 0 30px rgba(99, 102, 241, 0.3); }
+        }
+        @media (max-width: 768px) {
+            .timeline-dot {
+                left: -1rem;
+            }
+        }
+        .timeline-content {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-normal);
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+        .timeline-content:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-2xl);
+            border-color: var(--primary);
+        }
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .timeline-content .role {
+            font-size: 1.125rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .timeline-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 0.5rem;
+        }
+        .timeline-content li {
+            position: relative;
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+        .timeline-content li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        /* Project card fixes */
+        #projects .project-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        #projects .project-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-2xl);
+        }
+        #projects .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        #projects .project-card .p-6 {
+            padding: 1.5rem;
+        }
+        #projects .project-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        #projects .project-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        #projects .project-card .flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        #projects .project-card .tag {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        #projects .project-card .btn {
+            font-size: 0.9rem;
+            padding: 0.75rem 1.5rem;
+        }
+
+
+        /* Contact Section */
         .contact {
             background: var(--bg-primary);
         }
@@ -1244,7 +1610,6 @@
     </style>
 </head>
 <body data-theme="light">
-    <!-- Loading Screen -->
     <div class="loading-screen">
         <div class="loading-particles"></div>
         <div class="loading-logo">RTC</div>
@@ -1259,13 +1624,10 @@
         </div>
     </div>
 
-    <!-- Scroll Progress Bar -->
     <div class="scroll-progress"></div>
 
-    <!-- Sparkle Container (for mobile background) -->
     <div class="sparkle-container"></div>
 
-    <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">RTC</a>
@@ -1290,7 +1652,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="hero" class="hero">
         <div class="hero-bg">
             <div class="hero-bg-gradient"></div>
@@ -1336,7 +1697,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <header class="section-header">
@@ -1379,7 +1739,6 @@
         </div>
     </section>
 
-    <!-- Skills Section (from previous template, adapted) -->
     <section id="skills" class="py-16 px-4">
         <div class="container mx-auto">
             <header class="section-header">
@@ -1387,45 +1746,41 @@
                 <h2 class="section-title">My Skills & Expertise</h2>
                 <div class="section-divider"></div>
             </header>
-            <div class="bg-card p-8 rounded-2xl shadow-lg max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Skill Category 1 -->
-                <div>
-                    <h3 class="text-2xl font-semibold text-text-primary mb-4 border-b border-border-color pb-2">AI & Machine Learning</h3>
-                    <ul class="list-disc list-inside text-text-secondary space-y-2">
-                        <li>Python (TensorFlow)</li>
-                        <li>Natural Language Processing (NLP)</li>
-                        <li>Computer Vision</li>
-                        <li>Data Analysis & Visualization</li>
-                        <li>My SQL</li>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>AI & Machine Learning</h3>
+                    <ul>
+                        <li><i class="fas fa-microchip"></i> Python (TensorFlow)</li>
+                        <li><i class="fas fa-language"></i> Natural Language Processing (NLP)</li>
+                        <li><i class="fas fa-eye"></i> Computer Vision</li>
+                        <li><i class="fas fa-chart-bar"></i> Data Analysis & Visualization</li>
+                        <li><i class="fas fa-database"></i> My SQL</li>
                     </ul>
                 </div>
-                <!-- Skill Category 2 -->
-                <div>
-                    <h3 class="text-2xl font-semibold text-text-primary mb-4 border-b border-border-color pb-2">Frontend Development</h3>
-                    <ul class="list-disc list-inside text-text-secondary space-y-2">
-                        <li>JavaScript (ES6+)</li>
-                        <li>React.js</li>
-                        <li>HTML5 / CSS3</li>
-                        <li>Tailwind CSS</li>
-                        <li>Responsive Design</li>
+                <div class="skill-category">
+                    <h3>Frontend Development</h3>
+                    <ul>
+                        <li><i class="fab fa-js-square"></i> JavaScript (ES6+)</li>
+                        <li><i class="fab fa-react"></i> React.js</li>
+                        <li><i class="fab fa-html5"></i> HTML5 / CSS3</li>
+                        <li><i class="fas fa-mobile-alt"></i> Tailwind CSS</li>
+                        <li><i class="fas fa-palette"></i> Responsive Design</li>
                     </ul>
                 </div>
-                <!-- Skill Category 3 -->
-                <div>
-                    <h3 class="text-2xl font-semibold text-text-primary mb-4 border-b border-border-color pb-2">Tools & Databases</h3>
-                    <ul class="list-disc list-inside text-text-secondary space-y-2">
-                        <li>Git / GitHub</li>
-                        <li>Docker</li>
-                        <li>MongoDB / PostgreSQL</li>
-                        <li>AWS / Google Cloud</li>
-                        <li>Jupyter Notebooks</li>
+                <div class="skill-category">
+                    <h3>Tools & Databases</h3>
+                    <ul>
+                        <li><i class="fab fa-github"></i> Git / GitHub</li>
+                        <li><i class="fab fa-docker"></i> Docker</li>
+                        <li><i class="fas fa-server"></i> MongoDB / PostgreSQL</li>
+                        <li><i class="fas fa-cloud"></i> AWS / Google Cloud</li>
+                        <li><i class="fas fa-book"></i> Jupyter Notebooks</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section (New, simplified structure) -->
     <section id="experience" class="about">
         <div class="container">
             <header class="section-header">
@@ -1433,42 +1788,50 @@
                 <h2 class="section-title">Achievements & Experience</h2>
                 <div class="section-divider"></div>
             </header>
-            <div class="space-y-8 max-w-4xl mx-auto">
-                <!-- Experience Item 1 -->
-                <div class="bg-card p-6 rounded-2xl shadow-lg transition duration-300 hover:shadow-xl hover:translate-y-[-5px]">
-                    <h3 class="text-2xl font-semibold text-text-primary">Chat-bot development Champion</h3>
-					<p class="text-lg text-primary mb-2">AI-QUEST: National level Technical Symposium</p>
-                    <ul class="list-disc list-inside text-text-secondary space-y-1">
-                        <li>Developed and deployed HR Chatbot models.</li>
-                        <li>Collaborated with team to archive the process with 4 Team memders.</li>
-                        <li>Successfully managed project timeline, coordinated development efforts, and delivered the complete solution within 1 day</li>
-                    </ul>
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Chat-bot development Champion</h3>
+                        <p class="role">AI-QUEST: National level Technical Symposium</p>
+                        <ul>
+                            <li>Developed and deployed HR Chatbot models.</li>
+                            <li>Collaborated with team to archive the process with 4 Team memders.</li>
+                            <li>Successfully managed project timeline, coordinated development efforts, and delivered the complete solution within 1 day.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item-center"><div class="timeline-dot"></div></div>
+                    <div></div>
                 </div>
-                <!-- Experience Item 2 -->
-                <div class="bg-card p-6 rounded-2xl shadow-lg transition duration-300 hover:shadow-xl hover:translate-y-[-5px]">
-                    <h3 class="text-2xl font-semibold text-text-primary">AWS Certified</h3>
-                    <p class="text-lg text-primary mb-2">Android Development Virtual Intenship</p>
-                    <ul class="list-disc list-inside text-text-secondary space-y-1">
-                        <li>Integration of AWS Services</li>
-                        <li>Android Development Fundamentals</li>
-                        <li>Cloud-Native Mobile Development</li>
-                    </ul>
+                <div class="timeline-item">
+                    <div></div>
+                    <div class="timeline-item-center"><div class="timeline-dot"></div></div>
+                    <div class="timeline-content">
+                        <h3>AWS Certified</h3>
+                        <p class="role">Android Development Virtual Intenship</p>
+                        <ul>
+                            <li>Integration of AWS Services.</li>
+                            <li>Android Development Fundamentals.</li>
+                            <li>Cloud-Native Mobile Development.</li>
+                        </ul>
+                    </div>
                 </div>
-                <!-- Education Item -->
-                <div class="bg-card p-6 rounded-2xl shadow-lg transition duration-300 hover:shadow-xl hover:translate-y-[-5px]">
-                    <h3 class="text-2xl font-semibold text-text-primary">Conference application</h3>
-                    <p class="text-lg text-primary mb-2">Developed a International Conference application for Department</p>
-                    <ul class="list-disc list-inside text-text-secondary space-y-1">
-                        <li>Done a web application for International conference.</li>
-                        <li>Which enhances the Skills in Development.</li>
-                        <li>Appreciation from KITS college for developing approach</li>
-                    </ul>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Conference application</h3>
+                        <p class="role">Developed a International Conference application for Department</p>
+                        <ul>
+                            <li>Done a web application for International conference.</li>
+                            <li>Which enhances the Skills in Development.</li>
+                            <li>Appreciation from KITS college for developing approach.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item-center"><div class="timeline-dot"></div></div>
+                    <div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section (adapted for new styling) -->
     <section id="projects" class="py-16 px-4">
         <div class="container mx-auto">
             <header class="section-header">
@@ -1477,8 +1840,7 @@
                 <div class="section-divider"></div>
             </header>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Project Card 1 -->
-                <div class="bg-card rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <div class="bg-card rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 project-card">
                     <img src="https://placehold.co/600x400/818CF8/FFFFFF?text=AI+Chatbot" alt="AI Chatbot Thumbnail" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold text-text-primary mb-2">HR Chatbot</h3>
@@ -1496,8 +1858,7 @@
                     </div>
                 </div>
 
-                <!-- Project Card 2 -->
-                <div class="bg-card rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <div class="bg-card rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 project-card">
                     <img src="https://placehold.co/600x400/93C5FD/FFFFFF?text=E-commerce+UI" alt="E-commerce UI Thumbnail" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold text-text-primary mb-2">Modern E-commerce Platform UI</h3>
@@ -1515,13 +1876,12 @@
                     </div>
                 </div>
 
-                <!-- Project Card 3 -->
-                <div class="bg-card rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <div class="bg-card rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 project-card">
                     <img src="https://placehold.co/600x400/A78BFA/FFFFFF?text=Festivo" alt="Festivo" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold text-text-primary mb-2">Event Management</h3>
                         <p class="text-text-secondary text-base mb-4">
-                            This project is a modern, responsive event management application designed to streamline the planning, organization, and execution of academic and professional events such as conferences and symposiums. It features an intuitive interface that enables users to manage schedules, track attendees, assign roles, and automate notifications. The platform was developed with a focus on user experience, scalability, and seamless accessibility, and has been used successfully for departmental-level conferences at KITS College.  
+                            This project is a modern, responsive event management application designed to streamline the planning, organization, and execution of academic and professional events such as conferences and symposiums. It features an intuitive interface that enables users to manage schedules, track attendees, assign roles, and automate notifications.   
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
@@ -1534,18 +1894,18 @@
                     </div>
                 </div>
 
-                <!-- Project Card 4 -->
-                <div class="bg-card rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <div class="bg-card rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 project-card">
                     <img src="https://placehold.co/600x400/A78BFA/FFFFFF?text=ICISCCT-26" alt="ICISCCT-26" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-2xl font-semibold text-text-primary mb-2">Event Management</h3>
+                        <h3 class="text-2xl font-semibold text-text-primary mb-2">ICISCCT-26</h3>
                         <p class="text-text-secondary text-base mb-4">
-                            This project is a modern, responsive event management application designed to streamline the planning, organization, and execution of academic and professional events such as conferences and symposiums. It features an intuitive interface that enables users to manage schedules, track attendees, assign roles, and automate notifications. The platform was developed with a focus on user experience, scalability, and seamless accessibility, and has been used successfully for departmental-level conferences at KITS College.  
+                            Me and my co partner has done this conference web.The platform was developed with a focus on user experience, scalability, and seamless accessibility, and has been used successfully for departmental-level conferences at KITS College.  
+                        </p>
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
                             <span class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML/CSS</span>
-                            <span class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Gemini ai API</span>
+                            <span class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">CMT</span>
                             <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">tawk.to</span>
                             <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Canva</span>
                             <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Google Map API</span>
@@ -1558,7 +1918,6 @@
         </div>
     </section>
 
-    <!-- Contact Section (adapted for new styling) -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header scroll-reveal">
@@ -1647,7 +2006,6 @@
     </section>
 
 
-    <!-- Footer -->
     <footer class="bg-gray-900 text-white py-8 px-4 text-center">
         <div class="container mx-auto">
             <p>&copy; <span id="currentYear"></span> Ramineni Tarun Chowdary. All rights reserved.</p>

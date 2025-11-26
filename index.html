@@ -1935,35 +1935,36 @@
                     </p>
                     
                     <div class="contact-details">
-                        <div class="contact-item" onclick="openCall()">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <strong>Phone</strong>
-                                <p>+91 9618182180</p>
-                            </div>
-                        </div>
-                        <div class="contact-item" onclick="openEmail()">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <strong>Email</strong>
-                                <p>tarunchoudaryramineni@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <strong>Location</strong>
-                                <p>Guntur, Andhra Pradesh, India</p>
-                            </div>
-                        </div>
-                    </div>
+    <a href="tel:+919618182180" class="contact-item" style="text-decoration: none; color: inherit;">
+        <div class="contact-icon">
+            <i class="fas fa-phone"></i>
+        </div>
+        <div>
+            <strong>Phone</strong>
+            <p>+91 9618182180</p>
+        </div>
+    </a>
 
+    <a href="mailto:tarunchoudaryramineni@gmail.com?subject=Inquiry from Website Portfolio" class="contact-item" style="text-decoration: none; color: inherit;" target="_blank">
+        <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+        </div>
+        <div>
+            <strong>Email</strong>
+            <p>tarunchoudaryramineni@gmail.com</p>
+        </div>
+    </a>
+
+    <div class="contact-item">
+        <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div>
+            <strong>Location</strong>
+            <p>Guntur, Andhra Pradesh, India</p>
+        </div>
+    </div>
+</div>
                     <div class="social-links">
                         <a href="https://github.com/tarun2180" class="social-link" title="GitHub" aria-label="Visit GitHub Profile" target="_blank">
                             <i class="fab fa-github"></i>
@@ -2060,21 +2061,7 @@
             });
 
             // WhatsApp and Email Integration
-            function openCall() {
-    const phoneNumber = '+919618182180';
-    // The 'tel:' URI scheme opens the native phone dialer 
-    window.location.href = `tel:${phoneNumber}`; 
-}
-
-// Function to open the user's email client
-function openEmail() {
-    const emailAddress = 'tarunchoudaryramineni@gmail.com'; 
-    const subject = encodeURIComponent('Inquiry from Website Portfolio');
-    const bodyText = encodeURIComponent('Hello Tarun,\n\nI am writing to you regarding...'); 
-    
-    // The 'mailto:' URI scheme opens the default email client
-    window.location.href = `mailto:${emailAddress}?subject=${subject}&body=${bodyText}`; 
-}
+            
 
         // Enhanced Form Handler with Email Integration
         class FormHandler {

@@ -1935,7 +1935,7 @@
                     </p>
                     
                     <div class="contact-details">
-                        <div class="contact-item" onclick="openWhatsApp()">
+                        <div class="contact-item" onclick="openCall()">
                             <div class="contact-icon">
                                 <i class="fas fa-phone"></i>
                             </div>
@@ -2060,12 +2060,20 @@
             });
 
             // WhatsApp and Email Integration
-        function openWhatsApp() {
-            const phoneNumber = '+919618182180';
-            const message = encodeURIComponent('Hello Tarun! I found your portfolio and would like to connect with you.');
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
-            window.open(whatsappURL, '_blank');
-        }
+            // Function to initiate a direct phone call
+            function openCall() {
+                const phoneNumber = '+919618182180';
+                // Use the 'tel:' scheme to open the native phone dialer
+                window.location.href = `tel:${phoneNumber}`; 
+            }
+
+            // Function to initiate a WhatsApp chat (optional, if you want a separate button)
+            function openWhatsApp() {
+                const phoneNumber = '+919618182180'; 
+                const message = encodeURIComponent('Hello Tarun! I found your portfolio and would like to connect with you.'); 
+                const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`; 
+                window.open(whatsappURL, '_blank'); 
+            }
 
         function openEmail() {
             const email = 'tarunchoudaryramineni@gmail.com';

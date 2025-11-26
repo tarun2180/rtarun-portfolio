@@ -2060,20 +2060,21 @@
             });
 
             // WhatsApp and Email Integration
-            // Function to initiate a direct phone call
             function openCall() {
-                const phoneNumber = '+919618182180';
-                // Use the 'tel:' scheme to open the native phone dialer
-                window.location.href = `tel:${phoneNumber}`; 
-            }
+    const phoneNumber = '+919618182180';
+    // The 'tel:' URI scheme opens the native phone dialer 
+    window.location.href = `tel:${phoneNumber}`; 
+}
 
-        function openEmail() {
-            const email = 'tarunchoudaryramineni@gmail.com';
-            const subject = encodeURIComponent('Portfolio Inquiry');
-            const body = encodeURIComponent('Hello Tarun,\n\nI came across your portfolio and would like to discuss potential opportunities.\n\nBest regards,');
-            const mailtoURL = `mailto:${email}?subject=${subject}&body=${body}`;
-            window.location.href = mailtoURL;
-        }
+// Function to open the user's email client
+function openEmail() {
+    const emailAddress = 'tarunchoudaryramineni@gmail.com'; 
+    const subject = encodeURIComponent('Inquiry from Website Portfolio');
+    const bodyText = encodeURIComponent('Hello Tarun,\n\nI am writing to you regarding...'); 
+    
+    // The 'mailto:' URI scheme opens the default email client
+    window.location.href = `mailto:${emailAddress}?subject=${subject}&body=${bodyText}`; 
+}
 
         // Enhanced Form Handler with Email Integration
         class FormHandler {

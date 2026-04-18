@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ramineni Tarun Chowdary - AI Engineer & Frontend Developer</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Ultra-Modern CSS Variables */
@@ -15,12 +18,12 @@
             --accent: #06b6d4;
             --success: #10b981;
             --warning: #f59e0b;
-            
+
             --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
             --gradient-secondary: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
             --gradient-accent: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
             --gradient-success: linear-gradient(135deg, #10b981 0%, #34d399 100%);
-            
+
             --text-primary: #18181b;
             --text-secondary: #52525b;
             --text-tertiary: #71717a;
@@ -30,14 +33,14 @@
             --bg-card: #ffffff;
             --bg-glass: rgba(255, 255, 255, 0.8);
             --border-color: rgba(226, 232, 240, 0.8);
-            
+
             --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
             --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
             --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
             --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
             --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.4);
-            
+
             --radius-sm: 0.25rem;
             --radius-md: 0.375rem;
             --radius-lg: 0.5rem;
@@ -45,12 +48,12 @@
             --radius-2xl: 1rem;
             --radius-3xl: 1.5rem;
             --radius-full: 9999px;
-            
+
             --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            
+
             --font-sans: 'Outfit', sans-serif;
             --font-mono: 'Space Grotesk', monospace;
         }
@@ -102,6 +105,7 @@
                 text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
                 transform: scale(1);
             }
+
             100% {
                 text-shadow: 0 0 40px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 255, 255, 0.6);
                 transform: scale(1.05);
@@ -145,8 +149,13 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .loading-text {
@@ -175,16 +184,37 @@
         }
 
         @keyframes loadingProgress {
-            0% { width: 0%; }
-            20% { width: 30%; }
-            50% { width: 60%; }
-            80% { width: 85%; }
-            100% { width: 100%; }
+            0% {
+                width: 0%;
+            }
+
+            20% {
+                width: 30%;
+            }
+
+            50% {
+                width: 60%;
+            }
+
+            80% {
+                width: 85%;
+            }
+
+            100% {
+                width: 100%;
+            }
         }
 
         @keyframes fadeInOut {
-            0%, 100% { opacity: 0.7; }
-            50% { opacity: 1; }
+
+            0%,
+            100% {
+                opacity: 0.7;
+            }
+
+            50% {
+                opacity: 1;
+            }
         }
 
         .loading-particles {
@@ -209,14 +239,17 @@
                 transform: translateY(100vh) translateX(0) scale(0);
                 opacity: 0;
             }
+
             10% {
                 opacity: 0.6;
                 transform: translateY(90vh) translateX(10px) scale(1);
             }
+
             90% {
                 opacity: 0.6;
                 transform: translateY(10vh) translateX(-10px) scale(1);
             }
+
             100% {
                 transform: translateY(0) translateX(0) scale(0);
                 opacity: 0;
@@ -339,14 +372,17 @@
                 opacity: 0;
                 transform: translateY(100vh) scale(0);
             }
+
             10% {
                 opacity: 1;
                 transform: translateY(90vh) scale(1);
             }
+
             90% {
                 opacity: 1;
                 transform: translateY(10vh) scale(1);
             }
+
             100% {
                 opacity: 0;
                 transform: translateY(0) scale(0);
@@ -562,10 +598,10 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle at center, 
-                rgba(99, 102, 241, 0.1) 0%, 
-                rgba(99, 102, 241, 0.05) 25%, 
-                rgba(0, 0, 0, 0) 70%);
+            background: radial-gradient(circle at center,
+                    rgba(99, 102, 241, 0.1) 0%,
+                    rgba(99, 102, 241, 0.05) 25%,
+                    rgba(0, 0, 0, 0) 70%);
         }
 
         .hero-bg-grid {
@@ -574,7 +610,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
+            background-image:
                 linear-gradient(to right, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
             background-size: 40px 40px;
@@ -618,9 +654,11 @@
             0% {
                 transform: translate(0, 0) scale(1) rotate(0deg);
             }
+
             50% {
                 transform: translate(-30px, 20px) scale(1.1) rotate(5deg);
             }
+
             100% {
                 transform: translate(30px, -20px) scale(0.9) rotate(-5deg);
             }
@@ -668,7 +706,7 @@
         }
 
         .hero-title {
-        	font-family: 'Playfair Display', serif;
+            font-family: 'Playfair Display', serif;
             font-size: clamp(2.5rem, 8vw, 4.5rem);
             font-weight: 800;
             line-height: 1.1;
@@ -828,12 +866,10 @@
             width: 100%;
             height: 100%;
             border-radius: var(--radius-full);
-            background: conic-gradient(
-                var(--primary) 0deg, 
-                var(--secondary) 120deg, 
-                var(--accent) 240deg, 
-                var(--primary) 360deg
-            );
+            background: conic-gradient(var(--primary) 0deg,
+                    var(--secondary) 120deg,
+                    var(--accent) 240deg,
+                    var(--primary) 360deg);
             animation: spin 8s linear infinite;
         }
 
@@ -850,8 +886,13 @@
         }
 
         @keyframes spin {
-            from { transform: translate(-50%, -50%) rotate(0deg); }
-            to { transform: translate(-50%, -50%) rotate(360deg); }
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
         }
 
         .avatar {
@@ -875,8 +916,15 @@
         }
 
         @keyframes pulse {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); }
-            50% { transform: translate(-50%, -50%) scale(1.05); }
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.05);
+            }
         }
 
         .floating-elements {
@@ -944,14 +992,29 @@
         }
 
         @keyframes floatTech {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            25% { transform: translateY(-15px) rotate(5deg); }
-            50% { transform: translateY(-25px) rotate(0deg); }
-            75% { transform: translateY(-15px) rotate(-5deg); }
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-15px) rotate(5deg);
+            }
+
+            50% {
+                transform: translateY(-25px) rotate(0deg);
+            }
+
+            75% {
+                transform: translateY(-15px) rotate(-5deg);
+            }
         }
 
         @keyframes fadeIn {
-            to { opacity: 1; }
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes fadeInUp {
@@ -1002,9 +1065,20 @@
         }
 
         @keyframes scrollDot {
-            0% { transform: translateY(0); opacity: 1; }
-            50% { transform: translateY(15px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateY(15px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         /* Ultra-Modern Section Styles */
@@ -1062,21 +1136,25 @@
             grid-template-columns: 1fr;
             gap: 3rem;
         }
+
         @media (min-width: 992px) {
             .about-content {
                 grid-template-columns: 1fr 1.2fr;
                 align-items: center;
             }
         }
+
         .about-text .about-description {
             margin-bottom: 1.5rem;
             font-size: 1.125rem;
             line-height: 1.75;
             color: var(--text-secondary);
         }
+
         .about-text .about-description:last-child {
             margin-bottom: 0;
         }
+
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1088,20 +1166,24 @@
             box-shadow: var(--shadow-xl);
             isolation: isolate;
         }
+
         .stats-grid::before {
             content: '';
             position: absolute;
             inset: 0;
             background: var(--gradient-primary);
             z-index: -1;
-            margin: -2px; /* border thickness */
+            margin: -2px;
+            /* border thickness */
             border-radius: inherit;
             opacity: 0.1;
             transition: opacity 0.5s ease;
         }
+
         .stats-grid:hover::before {
             opacity: 0.3;
         }
+
         .stat-card {
             text-align: center;
             padding: 2rem 1rem;
@@ -1112,6 +1194,7 @@
             overflow: hidden;
             border: 1px solid var(--border-color);
         }
+
         .stat-card::before {
             content: '';
             position: absolute;
@@ -1123,13 +1206,16 @@
             opacity: 0;
             transition: opacity 0.4s ease;
         }
+
         .stat-card:hover::before {
             opacity: 0.1;
         }
+
         .stat-card:hover {
             transform: translateY(-8px) scale(1.02);
             box-shadow: var(--shadow-glow);
         }
+
         .stat-card .stat-number {
             font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 800;
@@ -1139,21 +1225,26 @@
             z-index: 1;
             transition: color var(--transition-normal);
         }
+
         .stat-card .stat-number::after {
             content: '+';
         }
+
         .stat-card p {
             position: relative;
             z-index: 1;
             color: var(--text-tertiary);
             transition: color var(--transition-normal);
         }
+
         .stat-card:hover p {
             color: var(--text-primary);
         }
+
         .stat-card i {
             transition: transform var(--transition-bounce);
         }
+
         .stat-card:hover i {
             transform: scale(1.1);
         }
@@ -1164,6 +1255,7 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
+
         .skill-category {
             background: var(--bg-card);
             padding: 2.5rem;
@@ -1173,6 +1265,7 @@
             overflow: hidden;
             transition: all var(--transition-normal);
         }
+
         .skill-category::before {
             content: '';
             position: absolute;
@@ -1180,32 +1273,34 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: conic-gradient(
-                from 0deg,
-                rgba(99, 102, 241, 0.2) 0deg,
-                rgba(99, 102, 241, 0) 90deg,
-                rgba(99, 102, 241, 0) 180deg,
-                rgba(99, 102, 241, 0.2) 270deg,
-                rgba(99, 102, 241, 0.4) 360deg
-            );
+            background: conic-gradient(from 0deg,
+                    rgba(99, 102, 241, 0.2) 0deg,
+                    rgba(99, 102, 241, 0) 90deg,
+                    rgba(99, 102, 241, 0) 180deg,
+                    rgba(99, 102, 241, 0.2) 270deg,
+                    rgba(99, 102, 241, 0.4) 360deg);
             animation: skillBorderRotate 10s linear infinite;
             z-index: -1;
             border-radius: 2rem;
             opacity: 0.5;
             transition: opacity 0.5s;
         }
+
         .skill-category:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-2xl);
         }
+
         .skill-category:hover::before {
             opacity: 1;
         }
+
         @keyframes skillBorderRotate {
             to {
                 transform: rotate(360deg);
             }
         }
+
         .skill-category h3 {
             font-size: 1.75rem;
             font-weight: 700;
@@ -1216,6 +1311,7 @@
             margin-bottom: 1.5rem;
             position: relative;
         }
+
         .skill-category ul {
             list-style: none;
             padding: 0;
@@ -1223,6 +1319,7 @@
             display: grid;
             gap: 1rem;
         }
+
         .skill-category li {
             display: flex;
             align-items: center;
@@ -1232,21 +1329,33 @@
             font-weight: 500;
             transition: all var(--transition-normal);
         }
+
         .skill-category li i {
             font-size: 1.25rem;
             color: var(--primary);
             transition: transform var(--transition-normal);
         }
+
         .skill-category li:hover {
             color: var(--text-primary);
             transform: translateX(10px);
         }
+
         .skill-category li:hover i {
             transform: scale(1.2);
         }
-        .skill-category .icon-ai { color: #f43f5e; }
-        .skill-category .icon-dev { color: #06b6d4; }
-        .skill-category .icon-tools { color: #f59e0b; }
+
+        .skill-category .icon-ai {
+            color: #f43f5e;
+        }
+
+        .skill-category .icon-dev {
+            color: #06b6d4;
+        }
+
+        .skill-category .icon-tools {
+            color: #f59e0b;
+        }
 
         /* Experience Section (Updated for futuristic design) */
         .experience-timeline {
@@ -1255,6 +1364,7 @@
             margin: 0 auto;
             padding: 2rem 0;
         }
+
         .experience-timeline::before {
             content: '';
             position: absolute;
@@ -1266,6 +1376,7 @@
             transform: translateX(-50%);
             z-index: 0;
         }
+
         .timeline-item {
             display: grid;
             grid-template-columns: 1fr 2px 1fr;
@@ -1274,24 +1385,29 @@
             margin-bottom: 3rem;
             position: relative;
         }
+
         @media (max-width: 768px) {
             .timeline-item {
                 grid-template-columns: 1fr;
                 gap: 0;
             }
+
             .experience-timeline::before {
                 left: 1rem;
                 transform: translateX(0);
             }
         }
+
         .timeline-item:nth-child(even) .timeline-content {
             grid-column: 3 / 4;
         }
+
         @media (max-width: 768px) {
             .timeline-item:nth-child(even) .timeline-content {
                 grid-column: 1 / 2;
             }
         }
+
         .timeline-item-center {
             position: relative;
             grid-column: 2 / 3;
@@ -1301,11 +1417,13 @@
             display: flex;
             justify-content: center;
         }
+
         @media (max-width: 768px) {
             .timeline-item-center {
                 display: none;
             }
         }
+
         .timeline-dot {
             width: 16px;
             height: 16px;
@@ -1319,15 +1437,23 @@
             box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
             animation: dotGlow 2s ease-in-out infinite alternate;
         }
+
         @keyframes dotGlow {
-            from { box-shadow: 0 0 10px rgba(99, 102, 241, 0.5); }
-            to { box-shadow: 0 0 20px rgba(99, 102, 241, 0.8), 0 0 30px rgba(99, 102, 241, 0.3); }
+            from {
+                box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+            }
+
+            to {
+                box-shadow: 0 0 20px rgba(99, 102, 241, 0.8), 0 0 30px rgba(99, 102, 241, 0.3);
+            }
         }
+
         @media (max-width: 768px) {
             .timeline-dot {
                 left: -1rem;
             }
         }
+
         .timeline-content {
             background: var(--bg-card);
             padding: 2rem;
@@ -1337,22 +1463,26 @@
             border: 1px solid var(--border-color);
             position: relative;
         }
+
         .timeline-content:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-2xl);
             border-color: var(--primary);
         }
+
         .timeline-content h3 {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 0.5rem;
         }
+
         .timeline-content .role {
             font-size: 1.125rem;
             color: var(--primary);
             margin-bottom: 1rem;
         }
+
         .timeline-content ul {
             list-style: none;
             padding: 0;
@@ -1360,11 +1490,13 @@
             display: grid;
             gap: 0.5rem;
         }
+
         .timeline-content li {
             position: relative;
             padding-left: 1.5rem;
             color: var(--text-secondary);
         }
+
         .timeline-content li::before {
             content: '•';
             position: absolute;
@@ -1383,34 +1515,41 @@
             transform: translateY(0);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         #projects .project-card:hover {
             transform: translateY(-8px) scale(1.02);
             box-shadow: var(--shadow-2xl);
         }
+
         #projects .project-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
+
         #projects .project-card .p-6 {
             padding: 1.5rem;
         }
+
         #projects .project-card h3 {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 0.5rem;
         }
+
         #projects .project-card p {
             color: var(--text-secondary);
             margin-bottom: 1rem;
         }
+
         #projects .project-card .flex {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-bottom: 1.5rem;
         }
+
         #projects .project-card .tag {
             background: var(--bg-tertiary);
             color: var(--text-primary);
@@ -1419,6 +1558,7 @@
             font-size: 0.875rem;
             font-weight: 600;
         }
+
         #projects .project-card .btn {
             font-size: 0.9rem;
             padding: 0.75rem 1.5rem;
@@ -1596,10 +1736,10 @@
             padding: 0 0.5rem;
         }
 
-        .form-group input:focus + label,
-        .form-group textarea:focus + label,
-        .form-group input:not(:placeholder-shown) + label,
-        .form-group textarea:not(:placeholder-shown) + label {
+        .form-group input:focus+label,
+        .form-group textarea:focus+label,
+        .form-group input:not(:placeholder-shown)+label,
+        .form-group textarea:not(:placeholder-shown)+label {
             top: -0.75rem;
             left: 1rem;
             font-size: 0.875rem;
@@ -1609,6 +1749,7 @@
         }
     </style>
 </head>
+
 <body data-theme="light">
     <div class="loading-screen">
         <div class="loading-particles"></div>
@@ -1665,7 +1806,8 @@
                 <p class="hero-subtitle">Hello, I'm</p>
                 <h1 class="hero-title">Ramineni Tarun Chowdary <span class="highlight"></span></h1>
                 <p class="hero-description">
-                    A passionate <span class="font-bold">AI Engineer</span> and <span class="font-bold">Frontend Developer</span> dedicated to building innovative and user-centric digital experiences.
+                    A passionate <span class="font-bold">AI Engineer</span> and <span class="font-bold">Frontend
+                        Developer</span> dedicated to building innovative and user-centric digital experiences.
                 </p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">
@@ -1680,7 +1822,8 @@
                 <div class="profile-container">
                     <div class="profile-ring"></div>
                     <div class="avatar">
-                        <img src="https://placehold.co/200x200/6366f1/FFFFFF?text=TC" alt="Profile Avatar" class="w-full h-full rounded-full object-cover p-2">
+                        <img src="https://placehold.co/200x200/6366f1/FFFFFF?text=TC" alt="Profile Avatar"
+                            class="w-full h-full rounded-full object-cover p-2">
                     </div>
                     <div class="floating-elements">
                         <div class="floating-tech" style="top: 0; right: 20%;"><i class="fab fa-react"></i></div>
@@ -1693,7 +1836,9 @@
         </div>
         <div class="scroll-indicator">
             <p class="scroll-text">Scroll Down</p>
-            <div class="scroll-arrow"><div class="scroll-dot"></div></div>
+            <div class="scroll-arrow">
+                <div class="scroll-dot"></div>
+            </div>
         </div>
     </section>
 
@@ -1704,18 +1849,27 @@
                 <h2 class="section-title">A Bit About Me</h2>
                 <div class="section-divider"></div>
                 <p class="section-description">
-                    I'm a passionate AI Engineer and Frontend Developer with a knack for transforming complex problems into elegant, intuitive, and efficient solutions. My journey in tech has been driven by curiosity and a desire to build impactful products.
+                    I'm a passionate AI Engineer and Frontend Developer with a knack for transforming complex problems
+                    into elegant, intuitive, and efficient solutions. My journey in tech has been driven by curiosity
+                    and a desire to build impactful products.
                 </p>
             </header>
             <div class="about-content">
                 <div class="about-text">
                     <p class="about-description">
-                        I'm a passionate Computer Science student specializing in AI & ML with deep expertise in Prompt Engineering and Frontend Development. Currently pursuing B.Tech from KKR & KSR Institute of Technology and Sciences with a CGPA of 7.5, I'm dedicated to bridging the gap between cutting-edge AI technology and practical applications.                    </p>
+                        I'm a passionate Computer Science student specializing in AI & ML with deep expertise in Prompt
+                        Engineering and Frontend Development. Currently pursuing B.Tech from KKR & KSR Institute of
+                        Technology and Sciences with a CGPA of 7.5, I'm dedicated to bridging the gap between
+                        cutting-edge AI technology and practical applications. </p>
                     <p class="about-description">
-                        Concurrently, as a Frontend Developer, I craft visually appealing and highly interactive user interfaces using **React.js, JavaScript, and Tailwind CSS**. I believe that a great product is a fusion of cutting-edge technology and exceptional user experience.
+                        Concurrently, as a Frontend Developer, I craft visually appealing and highly interactive user
+                        interfaces using **React.js, JavaScript, and Tailwind CSS**. I believe that a great product is a
+                        fusion of cutting-edge technology and exceptional user experience.
                     </p>
                     <p class="about-description">
-                        I am constantly exploring new technologies and methodologies, always striving to optimize performance, enhance scalability, and create delightful user journeys. My goal is to bridge the gap between complex AI models and accessible, engaging applications.
+                        I am constantly exploring new technologies and methodologies, always striving to optimize
+                        performance, enhance scalability, and create delightful user journeys. My goal is to bridge the
+                        gap between complex AI models and accessible, engaging applications.
                     </p>
                 </div>
                 <div class="stats-grid">
@@ -1794,22 +1948,30 @@
                         <ul>
                             <li>Developed and deployed HR Chatbot models.</li>
                             <li>Collaborated with team to archive the process with 4 Team memders.</li>
-                            <li>Successfully managed project timeline, coordinated development efforts, and delivered the complete solution within 1 day.</li>
+                            <li>Successfully managed project timeline, coordinated development efforts, and delivered
+                                the complete solution within 1 day.</li>
                         </ul>
                     </div>
-                    <div class="timeline-item-center"><div class="timeline-dot"></div></div>
+                    <div class="timeline-item-center">
+                        <div class="timeline-dot"></div>
+                    </div>
                     <div></div>
                 </div>
                 <div class="timeline-item">
                     <div></div>
-                    <div class="timeline-item-center"><div class="timeline-dot"></div></div>
+                    <div class="timeline-item-center">
+                        <div class="timeline-dot"></div>
+                    </div>
                     <div class="timeline-content">
-                        <h3>AWS Certified</h3>
-                        <p class="role">Android Development Virtual Intenship</p>
+                        <h3>AI Intern - DRDL/DRDO</h3>
+                        <p class="role">Defence Research and Development Laboratory (Jan 2026 - Present)</p>
                         <ul>
-                            <li>Integration of AWS Services.</li>
-                            <li>Android Development Fundamentals.</li>
-                            <li>Cloud-Native Mobile Development.</li>
+                            <li>Working as an AI Intern at DRDL/DRDO on advanced defense technologies.</li>
+                            <li>Developing an <strong>AI-Based Drone Detection System</strong> using YOLOv8 and CNN.
+                            </li>
+                            <li>Designed models to detect and classify drones in real-time surveillance scenarios.</li>
+                            <li>Improving detection accuracy and optimizing performance for real-world applications.
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -1823,7 +1985,9 @@
                             <li>Appreciation from KITS college for developing approach.</li>
                         </ul>
                     </div>
-                    <div class="timeline-item-center"><div class="timeline-dot"></div></div>
+                    <div class="timeline-item-center">
+                        <div class="timeline-dot"></div>
+                    </div>
                     <div></div>
                 </div>
             </div>
@@ -1838,78 +2002,134 @@
                 <div class="section-divider"></div>
             </header>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="bg-card rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 project-card">
-                    <img src="https://placehold.co/600x400/818CF8/FFFFFF?text=AI+Chatbot" alt="AI Chatbot Thumbnail" class="w-full h-48 object-cover">
+                <div
+                    class="bg-card rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 project-card">
+                    <img src="https://placehold.co/600x400/818CF8/FFFFFF?text=AI+Chatbot" alt="AI Chatbot Thumbnail"
+                        class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold text-text-primary mb-2">HR Chatbot</h3>
                         <p class="text-text-secondary text-base mb-4">
-                            Designed sophisticated prompt patterns for a Gemini API + Supabase-based chatbot to handle internal HR queries efficiently, reducing manual workload by 45%.
+                            Designed sophisticated prompt patterns for a Gemini API + Supabase-based chatbot to handle
+                            internal HR queries efficiently, reducing manual workload by 45%.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Gemini API</span>
-                            <span class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Supabase</span>
-                            <span class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Chatbot</span>
-                            <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
+                            <span
+                                class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Gemini
+                                API</span>
+                            <span
+                                class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Supabase</span>
+                            <span
+                                class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Chatbot</span>
+                            <span
+                                class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
                         </div>
-                        <a href="https://tarun2180.github.io/HR-Chatbot/" class="inline-block bg-primary text-white px-5 py-2 rounded-full hover:bg-indigo-700 transition duration-300 mr-2 shadow-md" target="_blank"><i class="fas fa-external-link-alt"></i> View Project</a>
-                        <a href="https://github.com/tarun2180/HR-Chatbot/" class="inline-block bg-gray-200 text-gray-800 px-5 py-2 rounded-full hover:bg-gray-300 transition duration-300" target="_blank">GitHub</a>
+                        <a href="https://tarun2180.github.io/HR-Chatbot/"
+                            class="inline-block bg-primary text-white px-5 py-2 rounded-full hover:bg-indigo-700 transition duration-300 mr-2 shadow-md"
+                            target="_blank"><i class="fas fa-external-link-alt"></i> View Project</a>
+                        <a href="https://github.com/tarun2180/HR-Chatbot/"
+                            class="inline-block bg-gray-200 text-gray-800 px-5 py-2 rounded-full hover:bg-gray-300 transition duration-300"
+                            target="_blank">GitHub</a>
                     </div>
                 </div>
 
-                <div class="bg-card rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 project-card">
-                    <img src="https://placehold.co/600x400/93C5FD/FFFFFF?text=E-commerce+UI" alt="E-commerce UI Thumbnail" class="w-full h-48 object-cover">
+                <div
+                    class="bg-card rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 project-card">
+                    <img src="https://placehold.co/600x400/93C5FD/FFFFFF?text=E-commerce+UI"
+                        alt="E-commerce UI Thumbnail" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold text-text-primary mb-2">Modern E-commerce Platform UI</h3>
                         <p class="text-text-secondary text-base mb-4">
-                            Designed and developed a responsive and intuitive e-commerce user interface with HTML/CSS, which reducing manual workload by 45% and usig voice assistance, focusing on a seamless shopping experience and clean aesthetics.
+                            Designed and developed a responsive and intuitive e-commerce user interface with HTML/CSS,
+                            which reducing manual workload by 45% and usig voice assistance, focusing on a seamless
+                            shopping experience and clean aesthetics.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Vapi AI</span>
-                            <span class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML/CSS</span>
-                            <span class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
-                            <span class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Google Sheets</span>
+                            <span
+                                class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Vapi
+                                AI</span>
+                            <span
+                                class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML/CSS</span>
+                            <span
+                                class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
+                            <span
+                                class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Google
+                                Sheets</span>
                         </div>
-                        <a href="eco-mitra.netlify.app" class="inline-block bg-primary text-white px-5 py-2 rounded-full hover:bg-indigo-700 transition duration-300 mr-2 shadow-md" target="_blank"><i class="fas fa-external-link-alt"></i>View Project</a>
-                        <a href="https://github.com/tarun2180/eco.MITRA" class="inline-block bg-gray-200 text-gray-800 px-5 py-2 rounded-full hover:bg-gray-300 transition duration-300" target="_blank">GitHub</a>
+                        <a href="eco-mitra.netlify.app"
+                            class="inline-block bg-primary text-white px-5 py-2 rounded-full hover:bg-indigo-700 transition duration-300 mr-2 shadow-md"
+                            target="_blank"><i class="fas fa-external-link-alt"></i>View Project</a>
+                        <a href="https://github.com/tarun2180/eco.MITRA"
+                            class="inline-block bg-gray-200 text-gray-800 px-5 py-2 rounded-full hover:bg-gray-300 transition duration-300"
+                            target="_blank">GitHub</a>
                     </div>
                 </div>
 
-                <div class="bg-card rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 project-card">
-                    <img src="https://placehold.co/600x400/A78BFA/FFFFFF?text=Festivo" alt="Festivo" class="w-full h-48 object-cover">
+                <div
+                    class="bg-card rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 project-card">
+                    <img src="https://placehold.co/600x400/A78BFA/FFFFFF?text=Festivo" alt="Festivo"
+                        class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold text-text-primary mb-2">Event Management</h3>
                         <p class="text-text-secondary text-base mb-4">
-                            This project is a modern, responsive event management application designed to streamline the planning, organization, and execution of academic and professional events such as conferences and symposiums. It features an intuitive interface that enables users to manage schedules, track attendees, assign roles, and automate notifications.   
+                            This project is a modern, responsive event management application designed to streamline the
+                            planning, organization, and execution of academic and professional events such as
+                            conferences and symposiums. It features an intuitive interface that enables users to manage
+                            schedules, track attendees, assign roles, and automate notifications.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
-                            <span class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML/CSS</span>
-                            <span class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Gemini ai API</span>
-                            <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">App Script</span>
+                            <span
+                                class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
+                            <span
+                                class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML/CSS</span>
+                            <span
+                                class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Gemini
+                                ai API</span>
+                            <span
+                                class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">App
+                                Script</span>
                         </div>
-                        <a href="https://festivo-s.netlify.app/" class="inline-block bg-primary text-white px-5 py-2 rounded-full hover:bg-indigo-700 transition duration-300 mr-2 shadow-md" target="_blank">View Project</a>
-                        <a href="https://github.com/tarun2180/festivo" class="inline-block bg-gray-200 text-gray-800 px-5 py-2 rounded-full hover:bg-gray-300 transition duration-300" target="_blank">GitHub</a>
+                        <a href="https://festivo-s.netlify.app/"
+                            class="inline-block bg-primary text-white px-5 py-2 rounded-full hover:bg-indigo-700 transition duration-300 mr-2 shadow-md"
+                            target="_blank">View Project</a>
+                        <a href="https://github.com/tarun2180/festivo"
+                            class="inline-block bg-gray-200 text-gray-800 px-5 py-2 rounded-full hover:bg-gray-300 transition duration-300"
+                            target="_blank">GitHub</a>
                     </div>
                 </div>
 
-                <div class="bg-card rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 project-card">
-                    <img src="https://placehold.co/600x400/A78BFA/FFFFFF?text=ICISCCT-26" alt="ICISCCT-26" class="w-full h-48 object-cover">
+                <div
+                    class="bg-card rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 project-card">
+                    <img src="https://placehold.co/600x400/A78BFA/FFFFFF?text=ICISCCT-26" alt="ICISCCT-26"
+                        class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold text-text-primary mb-2">ICISCCT-26</h3>
                         <p class="text-text-secondary text-base mb-4">
-                            Me and my co partner has done this conference web.The platform was developed with a focus on user experience, scalability, and seamless accessibility, and has been used successfully for departmental-level conferences at KITS College.  
+                            Me and my co partner has done this conference web.The platform was developed with a focus on
+                            user experience, scalability, and seamless accessibility, and has been used successfully for
+                            departmental-level conferences at KITS College.
                         </p>
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
-                            <span class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML/CSS</span>
-                            <span class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">CMT</span>
-                            <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">tawk.to</span>
-                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Canva</span>
-                            <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Google Map API</span>
+                            <span
+                                class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
+                            <span
+                                class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML/CSS</span>
+                            <span
+                                class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">CMT</span>
+                            <span
+                                class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">tawk.to</span>
+                            <span
+                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Canva</span>
+                            <span
+                                class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Google
+                                Map API</span>
                         </div>
-                        <a href="https://kits-conference.netlify.app/" class="inline-block bg-primary text-white px-5 py-2 rounded-full hover:bg-indigo-700 transition duration-300 mr-2 shadow-md" target="_blank">View Project</a>
-                        <a href="#" class="inline-block bg-gray-200 text-gray-800 px-5 py-2 rounded-full hover:bg-gray-300 transition duration-300" target="_blank">GitHub</a>
+                        <a href="https://kits-conference.netlify.app/"
+                            class="inline-block bg-primary text-white px-5 py-2 rounded-full hover:bg-indigo-700 transition duration-300 mr-2 shadow-md"
+                            target="_blank">View Project</a>
+                        <a href="#"
+                            class="inline-block bg-gray-200 text-gray-800 px-5 py-2 rounded-full hover:bg-gray-300 transition duration-300"
+                            target="_blank">GitHub</a>
                     </div>
                 </div>
             </div>
@@ -1930,55 +2150,60 @@
                 <div class="contact-info scroll-reveal-left">
                     <h3>Get In Touch</h3>
                     <p>
-                        I'm always excited to discuss new opportunities, collaborate on innovative projects, 
+                        I'm always excited to discuss new opportunities, collaborate on innovative projects,
                         or simply chat about the latest in AI and technology. Let's create something amazing together!
                     </p>
-                    
+
                     <div class="contact-details">
-    <a href="tel:+919618182180" class="contact-item" style="text-decoration: none; color: inherit;">
-        <div class="contact-icon">
-            <i class="fas fa-phone"></i>
-        </div>
-        <div>
-            <strong>Phone</strong>
-            <p>+91 9618182180</p>
-        </div>
-    </a>
+                        <a href="tel:+919618182180" class="contact-item" style="text-decoration: none; color: inherit;">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <strong>Phone</strong>
+                                <p>+91 9618182180</p>
+                            </div>
+                        </a>
 
-    <a href="mailto:tarunchoudaryramineni@gmail.com?subject=Inquiry from Website Portfolio" class="contact-item" style="text-decoration: none; color: inherit;" target="_blank">
-        <div class="contact-icon">
-            <i class="fas fa-envelope"></i>
-        </div>
-        <div>
-            <strong>Email</strong>
-            <p>tarunchoudaryramineni@gmail.com</p>
-        </div>
-    </a>
+                        <a href="mailto:tarunchoudaryramineni@gmail.com?subject=Inquiry from Website Portfolio"
+                            class="contact-item" style="text-decoration: none; color: inherit;" target="_blank">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <strong>Email</strong>
+                                <p>tarunchoudaryramineni@gmail.com</p>
+                            </div>
+                        </a>
 
-    <div class="contact-item">
-        <div class="contact-icon">
-            <i class="fas fa-map-marker-alt"></i>
-        </div>
-        <div>
-            <strong>Location</strong>
-            <p>Guntur, Andhra Pradesh, India</p>
-        </div>
-    </div>
-</div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <strong>Location</strong>
+                                <p>Guntur, Andhra Pradesh, India</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="social-links">
-                        <a href="https://github.com/tarun2180" class="social-link" title="GitHub" aria-label="Visit GitHub Profile" target="_blank">
+                        <a href="https://github.com/tarun2180" class="social-link" title="GitHub"
+                            aria-label="Visit GitHub Profile" target="_blank">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/tarun-chowdary-175b4a351/" class="social-link" title="LinkedIn" aria-label="Visit LinkedIn Profile" target="_blank">
+                        <a href="https://www.linkedin.com/in/tarun-chowdary-175b4a351/" class="social-link"
+                            title="LinkedIn" aria-label="Visit LinkedIn Profile" target="_blank">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="mailto:tarunchoudaryramineni@gmail.com" class="social-link" title="Send Email" aria-label="Send Email">
+                        <a href="mailto:tarunchoudaryramineni@gmail.com" class="social-link" title="Send Email"
+                            aria-label="Send Email">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
                 </div>
 
-                <form id="contactForm" class="contact-form scroll-reveal-right" action="https://formsubmit.co/tarunchoudaryramineni@gmail.com" method="POST">
+                <form id="contactForm" class="contact-form scroll-reveal-right"
+                    action="https://formsubmit.co/tarunchoudaryramineni@gmail.com" method="POST">
                     <p>Unavailable right now soon develop</p>
                     <div class="form-group">
                         <input type="text" name="name" placeholder=" " required>
@@ -2062,83 +2287,83 @@
             });
 
             // WhatsApp and Email Integration
-            
 
-        // Enhanced Form Handler with Email Integration
-        class FormHandler {
-            constructor() {
-                this.form = document.getElementById('contactForm');
-                this.init();
-            }
 
-            init() {
-                if (this.form) {
-                    this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+            // Enhanced Form Handler with Email Integration
+            class FormHandler {
+                constructor() {
+                    this.form = document.getElementById('contactForm');
+                    this.init();
                 }
-            }
 
-            async handleSubmit(e) {
-                e.preventDefault();
-                
-                const submitBtn = this.form.querySelector('button[type="submit"]');
-                const originalHTML = submitBtn.innerHTML;
-                
-                submitBtn.innerHTML = '<span class="loading"></span> Sending...';
-                submitBtn.disabled = true;
-                
-                // Get form data
-                const formData = new FormData(this.form);
-                const data = {
-                    name: formData.get('name'),
-                    email: formData.get('email'),
-                    subject: formData.get('subject'),
-                    message: formData.get('message')
-                };
-
-                try {
-                    // Send email using EmailJS or similar service
-                    await this.sendEmail(data);
-                    this.showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-                    this.form.reset();
-                } catch (error) {
-                    console.error('Error sending email:', error);
-                    this.showNotification('Failed to send message. Please try again or contact me directly.', 'error');
+                init() {
+                    if (this.form) {
+                        this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+                    }
                 }
-                
-                submitBtn.innerHTML = originalHTML;
-                submitBtn.disabled = false;
-            }
 
-            async sendEmail(data) {
-                // Simulate email sending - replace with actual email service
-                return new Promise((resolve) => {
-                    setTimeout(() => {
-                        // In a real implementation, you would integrate with:
-                        // - EmailJS
-                        // - Formspree
-                        // - Netlify Forms
-                        // - Your own backend API
-                        
-                        // For now, we'll create a mailto link as fallback
-                        const subject = encodeURIComponent(`Portfolio Contact: ${data.subject}`);
-                        const body = encodeURIComponent(
-                            `Name: ${data.name}\n` +
-                            `Email: ${data.email}\n` +
-                            `Subject: ${data.subject}\n\n` +
-                            `Message:\n${data.message}`
-                        );
-                        
-                        // Open default email client
-                        window.location.href = `mailto:tarunchoudaryramineni@gmail.com?subject=${subject}&body=${body}`;
-                        
-                        resolve();
-                    }, 2000);
-                });
-            }
+                async handleSubmit(e) {
+                    e.preventDefault();
 
-            showNotification(message, type = 'info') {
-                const notification = document.createElement('div');
-                notification.style.cssText = `
+                    const submitBtn = this.form.querySelector('button[type="submit"]');
+                    const originalHTML = submitBtn.innerHTML;
+
+                    submitBtn.innerHTML = '<span class="loading"></span> Sending...';
+                    submitBtn.disabled = true;
+
+                    // Get form data
+                    const formData = new FormData(this.form);
+                    const data = {
+                        name: formData.get('name'),
+                        email: formData.get('email'),
+                        subject: formData.get('subject'),
+                        message: formData.get('message')
+                    };
+
+                    try {
+                        // Send email using EmailJS or similar service
+                        await this.sendEmail(data);
+                        this.showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+                        this.form.reset();
+                    } catch (error) {
+                        console.error('Error sending email:', error);
+                        this.showNotification('Failed to send message. Please try again or contact me directly.', 'error');
+                    }
+
+                    submitBtn.innerHTML = originalHTML;
+                    submitBtn.disabled = false;
+                }
+
+                async sendEmail(data) {
+                    // Simulate email sending - replace with actual email service
+                    return new Promise((resolve) => {
+                        setTimeout(() => {
+                            // In a real implementation, you would integrate with:
+                            // - EmailJS
+                            // - Formspree
+                            // - Netlify Forms
+                            // - Your own backend API
+
+                            // For now, we'll create a mailto link as fallback
+                            const subject = encodeURIComponent(`Portfolio Contact: ${data.subject}`);
+                            const body = encodeURIComponent(
+                                `Name: ${data.name}\n` +
+                                `Email: ${data.email}\n` +
+                                `Subject: ${data.subject}\n\n` +
+                                `Message:\n${data.message}`
+                            );
+
+                            // Open default email client
+                            window.location.href = `mailto:tarunchoudaryramineni@gmail.com?subject=${subject}&body=${body}`;
+
+                            resolve();
+                        }, 2000);
+                    });
+                }
+
+                showNotification(message, type = 'info') {
+                    const notification = document.createElement('div');
+                    notification.style.cssText = `
                     position: fixed;
                     top: 20px;
                     right: 20px;
@@ -2149,31 +2374,31 @@
                     z-index: 10000;
                     transform: translateX(100%);
                     transition: transform 0.3s ease;
-                    background: ${type === 'success' ? 'linear-gradient(135deg, #10b981 0%, #34d399 100%)' : 
-                                type === 'error' ? 'linear-gradient(135deg, #ef4444 0%, #f87171 100%)' :
+                    background: ${type === 'success' ? 'linear-gradient(135deg, #10b981 0%, #34d399 100%)' :
+                            type === 'error' ? 'linear-gradient(135deg, #ef4444 0%, #f87171 100%)' :
                                 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)'};
                     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
                     max-width: 300px;
                     font-size: 0.9rem;
                 `;
-                notification.textContent = message;
-                
-                document.body.appendChild(notification);
-                
-                setTimeout(() => {
-                    notification.style.transform = 'translateX(0)';
-                }, 100);
-                
-                setTimeout(() => {
-                    notification.style.transform = 'translateX(100%)';
+                    notification.textContent = message;
+
+                    document.body.appendChild(notification);
+
                     setTimeout(() => {
-                        if (notification.parentNode) {
-                            notification.parentNode.removeChild(notification);
-                        }
-                    }, 300);
-                }, 4000);
+                        notification.style.transform = 'translateX(0)';
+                    }, 100);
+
+                    setTimeout(() => {
+                        notification.style.transform = 'translateX(100%)';
+                        setTimeout(() => {
+                            if (notification.parentNode) {
+                                notification.parentNode.removeChild(notification);
+                            }
+                        }, 300);
+                    }, 4000);
+                }
             }
-        }
 
 
             // Close mobile menu when a link is clicked
@@ -2241,4 +2466,5 @@
         });
     </script>
 </body>
+
 </html>

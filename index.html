@@ -1,2470 +1,769 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramineni Tarun Chowdary - AI Engineer & Frontend Developer</title>
+    <title>Ramineni Tarun Chowdary | Ultra-Premium Portfolio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Outfit"', 'sans-serif'],
+                        mono: ['"Space Grotesk"', 'monospace'],
+                    },
+                    colors: {
+                        dark: '#030303',
+                        primary: '#6366f1',
+                        secondary: '#ec4899',
+                        accent: '#06b6d4',
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        /* Ultra-Modern CSS Variables */
         :root {
-            --primary: #6366f1;
-            --secondary: #ec4899;
-            --accent: #06b6d4;
-            --success: #10b981;
-            --warning: #f59e0b;
-
-            --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            --gradient-secondary: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
-            --gradient-accent: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
-            --gradient-success: linear-gradient(135deg, #10b981 0%, #34d399 100%);
-
-            --text-primary: #18181b;
-            --text-secondary: #52525b;
-            --text-tertiary: #71717a;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --bg-tertiary: #f1f5f9;
-            --bg-card: #ffffff;
-            --bg-glass: rgba(255, 255, 255, 0.8);
-            --border-color: rgba(226, 232, 240, 0.8);
-
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
-            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-            --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.4);
-
-            --radius-sm: 0.25rem;
-            --radius-md: 0.375rem;
-            --radius-lg: 0.5rem;
-            --radius-xl: 0.75rem;
-            --radius-2xl: 1rem;
-            --radius-3xl: 1.5rem;
-            --radius-full: 9999px;
-
-            --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-            --font-sans: 'Outfit', sans-serif;
-            --font-mono: 'Space Grotesk', monospace;
-        }
-
-        [data-theme="dark"] {
-            --text-primary: #f8fafc;
-            --text-secondary: #e2e8f0;
-            --text-tertiary: #cbd5e1;
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --bg-tertiary: #334155;
-            --bg-card: #1e293b;
-            --bg-glass: rgba(15, 23, 42, 0.8);
-            --border-color: rgba(51, 65, 85, 0.8);
-            --shadow-glow: 0 0 25px rgba(99, 102, 241, 0.6);
-        }
-
-        /* LOADING SCREEN STYLES */
-        .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
-        }
-
-        .loading-screen.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .loading-logo {
-            font-size: 4rem;
-            font-weight: 900;
-            color: white;
-            margin-bottom: 2rem;
-            animation: logoGlow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes logoGlow {
-            0% {
-                text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-                transform: scale(1);
-            }
-
-            100% {
-                text-shadow: 0 0 40px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 255, 255, 0.6);
-                transform: scale(1.05);
-            }
-        }
-
-        .loading-spinner {
-            position: relative;
-            width: 80px;
-            height: 80px;
-            margin-bottom: 2rem;
-        }
-
-        .loading-ring {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border: 4px solid transparent;
-            border-top: 4px solid white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        .loading-ring:nth-child(2) {
-            width: 60px;
-            height: 60px;
-            top: 10px;
-            left: 10px;
-            border-top-color: rgba(255, 255, 255, 0.7);
-            animation-duration: 1.5s;
-            animation-direction: reverse;
-        }
-
-        .loading-ring:nth-child(3) {
-            width: 40px;
-            height: 40px;
-            top: 20px;
-            left: 20px;
-            border-top-color: rgba(255, 255, 255, 0.5);
-            animation-duration: 2s;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .loading-text {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            animation: fadeInOut 2s ease-in-out infinite;
-        }
-
-        .loading-progress {
-            width: 300px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 2px;
-            overflow: hidden;
-            margin-bottom: 1rem;
-        }
-
-        .loading-progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0.8));
-            border-radius: 2px;
-            width: 0%;
-            animation: loadingProgress 3s ease-in-out forwards;
-        }
-
-        @keyframes loadingProgress {
-            0% {
-                width: 0%;
-            }
-
-            20% {
-                width: 30%;
-            }
-
-            50% {
-                width: 60%;
-            }
-
-            80% {
-                width: 85%;
-            }
-
-            100% {
-                width: 100%;
-            }
-        }
-
-        @keyframes fadeInOut {
-
-            0%,
-            100% {
-                opacity: 0.7;
-            }
-
-            50% {
-                opacity: 1;
-            }
-        }
-
-        .loading-particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: white;
-            border-radius: 50%;
-            opacity: 0.6;
-            animation: particleFloat 4s linear infinite;
-        }
-
-        @keyframes particleFloat {
-            0% {
-                transform: translateY(100vh) translateX(0) scale(0);
-                opacity: 0;
-            }
-
-            10% {
-                opacity: 0.6;
-                transform: translateY(90vh) translateX(10px) scale(1);
-            }
-
-            90% {
-                opacity: 0.6;
-                transform: translateY(10vh) translateX(-10px) scale(1);
-            }
-
-            100% {
-                transform: translateY(0) translateX(0) scale(0);
-                opacity: 0;
-            }
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            overflow-x: hidden;
+            --cursor-color: #06b6d4;
         }
 
         body {
-            font-family: var(--font-sans);
-            line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--bg-primary);
-            transition: all 0.6s ease;
+            background-color: #030303;
+            color: #ffffff;
             overflow-x: hidden;
+            cursor: none; /* Hide default cursor for custom cursor */
         }
 
         /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #030303; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #6366f1; }
 
-        ::-webkit-scrollbar-track {
-            background: var(--bg-secondary);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--gradient-primary);
-            border-radius: var(--radius-full);
-        }
-
-        /* Utility Classes */
-        .container {
-            width: 100%;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .container {
-                padding: 0 2rem;
-            }
-        }
-
-        .glass-effect {
-            background: var(--bg-glass);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--border-color);
-        }
-
-        .gradient-text {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Scroll Progress Bar */
-        .scroll-progress {
+        /* Custom Cursor */
+        .cursor-dot {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 4px;
-            background: var(--gradient-primary);
-            z-index: 9999;
-            transition: width 0.1s ease;
-        }
-
-        /* Sparkling Particles for Mobile */
-        .sparkle-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .sparkle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--primary);
+            top: 0; left: 0;
+            width: 8px; height: 8px;
+            background-color: var(--cursor-color);
             border-radius: 50%;
-            opacity: 0;
-            animation: sparkleFloat 3s ease-in-out infinite;
+            transform: translate(-50%, -50%);
+            z-index: 10000;
+            pointer-events: none;
+            box-shadow: 0 0 15px var(--cursor-color);
         }
 
-        .sparkle:nth-child(2n) {
-            background: var(--secondary);
-            animation-delay: 0.5s;
-        }
-
-        .sparkle:nth-child(3n) {
-            background: var(--accent);
-            animation-delay: 1s;
-        }
-
-        .sparkle:nth-child(4n) {
-            background: var(--success);
-            animation-delay: 1.5s;
-        }
-
-        @keyframes sparkleFloat {
-            0% {
-                opacity: 0;
-                transform: translateY(100vh) scale(0);
-            }
-
-            10% {
-                opacity: 1;
-                transform: translateY(90vh) scale(1);
-            }
-
-            90% {
-                opacity: 1;
-                transform: translateY(10vh) scale(1);
-            }
-
-            100% {
-                opacity: 0;
-                transform: translateY(0) scale(0);
-            }
-        }
-
-        /* Ultra-Modern Navigation */
-        .navbar {
+        .cursor-outline {
             position: fixed;
-            top: 0;
-            left: 0;
+            top: 0; left: 0;
+            width: 40px; height: 40px;
+            border: 2px solid rgba(6, 182, 212, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            pointer-events: none;
+            transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+        }
+
+        /* Particle Background Container */
+        #tsparticles {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Glass Cards */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gradient Text Effects */
+        .text-gradient {
+            background: linear-gradient(to right, #6366f1, #06b6d4, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% auto;
+            animation: textShine 4s linear infinite;
+        }
+
+        @keyframes textShine {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255,255,255,0.2);
+            transition: -webkit-text-stroke 0.3s ease, color 0.3s ease;
+        }
+
+        .text-outline:hover {
+            color: #fff;
+            -webkit-text-stroke: 1px transparent;
+        }
+
+        /* Infinite Marquee */
+        .marquee-container {
             width: 100%;
-            z-index: 1000;
-            transition: all var(--transition-normal);
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
             padding: 1rem 0;
-        }
-
-        .navbar.scrolled {
-            background: var(--bg-glass);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            padding: 0.75rem 0;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .nav-container {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            white-space: nowrap;
         }
 
-        .logo {
-            font-size: 1.75rem;
-            font-weight: 800;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-decoration: none;
-            transition: all var(--transition-bounce);
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-            filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.5));
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                max-width: 400px;
-                height: 100vh;
-                background: var(--bg-glass);
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 2.5rem;
-                transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-                border-left: 1px solid var(--border-color);
-                padding: 2rem;
-                z-index: 200;
-            }
-
-            .nav-menu.active {
-                right: 0;
-            }
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 600;
-            font-size: 1rem;
-            position: relative;
-            transition: all var(--transition-normal);
-            padding: 0.5rem 0;
-        }
-
-        .nav-link::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: width var(--transition-bounce);
-        }
-
-        .nav-link:hover {
-            color: var(--primary);
-        }
-
-        .nav-link:hover::before,
-        .nav-link.active::before {
-            width: 100%;
-        }
-
-        .nav-link.active {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .theme-toggle {
-            background: var(--bg-glass);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-full);
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all var(--transition-bounce);
-            color: var(--text-primary);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
-        .theme-toggle:hover {
-            transform: scale(1.1) rotate(10deg);
-            box-shadow: var(--shadow-glow);
-            background: var(--gradient-primary);
-            color: white;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 45px;
-            height: 45px;
-            cursor: pointer;
-            background: var(--bg-glass);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-full);
-            transition: all var(--transition-bounce);
-            z-index: 999;
-        }
-
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-        }
-
-        .hamburger:hover {
-            transform: scale(1.1);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .hamburger span {
-            display: block;
-            width: 22px;
-            height: 2px;
-            background: var(--text-primary);
-            margin: 2px 0;
-            transition: all var(--transition-normal);
-            border-radius: var(--radius-full);
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: translateY(6px) rotate(45deg);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: translateY(-6px) rotate(-45deg);
-        }
-
-        /* Ultra-Modern Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding: 6rem 0 3rem;
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .hero-bg-gradient {
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at center,
-                    rgba(99, 102, 241, 0.1) 0%,
-                    rgba(99, 102, 241, 0.05) 25%,
-                    rgba(0, 0, 0, 0) 70%);
-        }
-
-        .hero-bg-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image:
-                linear-gradient(to right, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-
-        .hero-shape {
-            position: absolute;
-            border-radius: var(--radius-full);
-            filter: blur(60px);
-            opacity: 0.4;
-        }
-
-        .hero-shape-1 {
-            top: 10%;
-            left: 10%;
-            width: 300px;
-            height: 300px;
-            background: var(--primary);
-            animation: float 20s ease-in-out infinite alternate;
-        }
-
-        .hero-shape-2 {
-            bottom: 10%;
-            right: 10%;
-            width: 250px;
-            height: 250px;
-            background: var(--secondary);
-            animation: float 15s ease-in-out infinite alternate-reverse;
-        }
-
-        .hero-shape-3 {
-            top: 50%;
-            left: 50%;
-            width: 200px;
-            height: 200px;
-            background: var(--accent);
-            animation: float 18s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translate(0, 0) scale(1) rotate(0deg);
-            }
-
-            50% {
-                transform: translate(-30px, 20px) scale(1.1) rotate(5deg);
-            }
-
-            100% {
-                transform: translate(30px, -20px) scale(0.9) rotate(-5deg);
-            }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            width: 100%;
-        }
-
-        @media (min-width: 992px) {
-            .hero-content {
-                grid-template-columns: 1fr 1fr;
-                gap: 4rem;
-            }
-        }
-
-        .hero-text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-        }
-
-        @media (min-width: 992px) {
-            .hero-text {
-                text-align: left;
-            }
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s forwards 0.2s;
-        }
-
-        .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1s ease 0.4s both;
-        }
-
-        .hero-title .highlight {
-            position: relative;
+        .marquee-content {
             display: inline-block;
+            animation: marquee 20s linear infinite;
         }
 
-        .hero-title .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 0.3em;
-            background: var(--gradient-primary);
-            z-index: -1;
-            opacity: 0.3;
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
-        .hero-description {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s forwards 0.6s;
+        /* Button Hover Effects */
+        .magnetic-btn {
+            display: inline-block;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-
-        @media (min-width: 992px) {
-            .hero-description {
-                margin-left: 0;
-                margin-right: 0;
-            }
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s forwards 0.8s;
-        }
-
-        @media (min-width: 992px) {
-            .hero-buttons {
-                justify-content: flex-start;
-            }
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 0.875rem 1.75rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: var(--radius-full);
-            text-decoration: none;
-            transition: all var(--transition-bounce);
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            border: none;
-            outline: none;
-            min-width: 160px;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.8s;
-        }
-
-        .btn:hover::before {
-            transform: translateX(100%);
-        }
-
-        .btn-primary {
-            background: var(--gradient-primary);
-            color: white;
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-primary);
-            border: 2px solid var(--primary);
-        }
-
-        .btn-secondary:hover {
-            background: var(--gradient-primary);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-glow);
+        
+        .magnetic-btn:hover ~ .cursor-outline {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(6, 182, 212, 0.1);
             border-color: transparent;
         }
 
-        .hero-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        /* Timeline SVGs */
+        .timeline-container {
             position: relative;
+            padding-left: 2rem;
         }
-
-        .profile-container {
-            position: relative;
-            width: 280px;
-            height: 280px;
-            opacity: 0;
-            transform: scale(0.9);
-            animation: fadeInScale 1s forwards 1s;
-        }
-
-        @media (min-width: 768px) {
-            .profile-container {
-                width: 320px;
-                height: 320px;
-            }
-        }
-
-        @keyframes fadeInScale {
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .profile-ring {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-            border-radius: var(--radius-full);
-            background: conic-gradient(var(--primary) 0deg,
-                    var(--secondary) 120deg,
-                    var(--accent) 240deg,
-                    var(--primary) 360deg);
-            animation: spin 8s linear infinite;
-        }
-
-        .profile-ring::before {
+        .timeline-container::before {
             content: '';
             position: absolute;
-            top: 10px;
-            left: 10px;
-            right: 10px;
-            bottom: 10px;
-            border-radius: var(--radius-full);
-            background: var(--bg-primary);
-            z-index: 1;
-        }
-
-        @keyframes spin {
-            from {
-                transform: translate(-50%, -50%) rotate(0deg);
-            }
-
-            to {
-                transform: translate(-50%, -50%) rotate(360deg);
-            }
-        }
-
-        .avatar {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: calc(100% - 30px);
-            height: calc(100% - 30px);
-            background: var(--gradient-primary);
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            font-weight: 900;
-            color: white;
-            box-shadow: var(--shadow-xl);
-            z-index: 2;
-            animation: pulse 3s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                transform: translate(-50%, -50%) scale(1);
-            }
-
-            50% {
-                transform: translate(-50%, -50%) scale(1.05);
-            }
-        }
-
-        .floating-elements {
-            position: absolute;
-            top: 0;
             left: 0;
-            right: 0;
+            top: 0;
             bottom: 0;
-            z-index: 3;
-        }
-
-        .floating-tech {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background: var(--bg-glass);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-xl);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-lg);
-            transition: all var(--transition-bounce);
-            opacity: 0;
-            animation: fadeIn 0.5s forwards, floatTech 6s ease-in-out infinite;
-        }
-
-        .floating-tech:nth-child(1) {
-            top: 0;
-            right: 20%;
-            animation-delay: 1.2s, 1.5s;
-        }
-
-        .floating-tech:nth-child(2) {
-            top: 60%;
-            right: -10%;
-            animation-delay: 1.4s, 2s;
-        }
-
-        .floating-tech:nth-child(3) {
-            bottom: 0;
-            left: 20%;
-            animation-delay: 1.6s, 2.5s;
-        }
-
-        .floating-tech:nth-child(4) {
-            top: 20%;
-            left: -10%;
-            animation-delay: 1.8s, 3s;
-        }
-
-        .floating-tech i {
-            font-size: 1.5rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .floating-tech:hover {
-            transform: scale(1.2) rotate(10deg);
-            box-shadow: var(--shadow-glow);
-        }
-
-        @keyframes floatTech {
-
-            0%,
-            100% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            25% {
-                transform: translateY(-15px) rotate(5deg);
-            }
-
-            50% {
-                transform: translateY(-25px) rotate(0deg);
-            }
-
-            75% {
-                transform: translateY(-15px) rotate(-5deg);
-            }
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Scroll Down Indicator */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            opacity: 0;
-            animation: fadeIn 0.5s forwards 2s;
-        }
-
-        .scroll-text {
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .scroll-arrow {
-            width: 30px;
-            height: 50px;
-            border: 2px solid var(--primary);
-            border-radius: var(--radius-full);
-            display: flex;
-            justify-content: center;
-            padding-top: 10px;
-        }
-
-        .scroll-dot {
-            width: 6px;
-            height: 6px;
-            background: var(--primary);
-            border-radius: var(--radius-full);
-            animation: scrollDot 2s infinite;
-        }
-
-        @keyframes scrollDot {
-            0% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-
-            50% {
-                transform: translateY(15px);
-                opacity: 0;
-            }
-
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        /* Ultra-Modern Section Styles */
-        section {
-            padding: 6rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        @media (max-width: 768px) {
-            section {
-                padding: 4rem 0;
-            }
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-            position: relative;
-        }
-
-        .section-subtitle {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-        }
-
-        .section-description {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .section-divider {
-            width: 80px;
-            height: 4px;
-            background: var(--gradient-primary);
-            margin: 1.5rem auto;
-            border-radius: var(--radius-full);
-        }
-
-        /* About Section (Updated for futuristic design) */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-        }
-
-        @media (min-width: 992px) {
-            .about-content {
-                grid-template-columns: 1fr 1.2fr;
-                align-items: center;
-            }
-        }
-
-        .about-text .about-description {
-            margin-bottom: 1.5rem;
-            font-size: 1.125rem;
-            line-height: 1.75;
-            color: var(--text-secondary);
-        }
-
-        .about-text .about-description:last-child {
-            margin-bottom: 0;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            position: relative;
-            padding: 2rem;
-            border-radius: var(--radius-3xl);
-            background: var(--bg-card);
-            box-shadow: var(--shadow-xl);
-            isolation: isolate;
-        }
-
-        .stats-grid::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: var(--gradient-primary);
-            z-index: -1;
-            margin: -2px;
-            /* border thickness */
-            border-radius: inherit;
-            opacity: 0.1;
-            transition: opacity 0.5s ease;
-        }
-
-        .stats-grid:hover::before {
-            opacity: 0.3;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 2rem 1rem;
-            border-radius: var(--radius-2xl);
-            background: var(--bg-secondary);
-            transition: all var(--transition-bounce);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-        }
-
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-primary);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .stat-card:hover::before {
-            opacity: 0.1;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .stat-card .stat-number {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 800;
-            line-height: 1;
-            margin-bottom: 0.5rem;
-            position: relative;
-            z-index: 1;
-            transition: color var(--transition-normal);
-        }
-
-        .stat-card .stat-number::after {
-            content: '+';
-        }
-
-        .stat-card p {
-            position: relative;
-            z-index: 1;
-            color: var(--text-tertiary);
-            transition: color var(--transition-normal);
-        }
-
-        .stat-card:hover p {
-            color: var(--text-primary);
-        }
-
-        .stat-card i {
-            transition: transform var(--transition-bounce);
-        }
-
-        .stat-card:hover i {
-            transform: scale(1.1);
-        }
-
-        /* Skills Section (Updated for futuristic design) */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background: var(--bg-card);
-            padding: 2.5rem;
-            border-radius: var(--radius-3xl);
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            overflow: hidden;
-            transition: all var(--transition-normal);
-        }
-
-        .skill-category::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(from 0deg,
-                    rgba(99, 102, 241, 0.2) 0deg,
-                    rgba(99, 102, 241, 0) 90deg,
-                    rgba(99, 102, 241, 0) 180deg,
-                    rgba(99, 102, 241, 0.2) 270deg,
-                    rgba(99, 102, 241, 0.4) 360deg);
-            animation: skillBorderRotate 10s linear infinite;
-            z-index: -1;
-            border-radius: 2rem;
-            opacity: 0.5;
-            transition: opacity 0.5s;
-        }
-
-        .skill-category:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-2xl);
-        }
-
-        .skill-category:hover::before {
-            opacity: 1;
-        }
-
-        @keyframes skillBorderRotate {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        .skill-category h3 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        .skill-category ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            gap: 1rem;
-        }
-
-        .skill-category li {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 1rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            transition: all var(--transition-normal);
-        }
-
-        .skill-category li i {
-            font-size: 1.25rem;
-            color: var(--primary);
-            transition: transform var(--transition-normal);
-        }
-
-        .skill-category li:hover {
-            color: var(--text-primary);
-            transform: translateX(10px);
-        }
-
-        .skill-category li:hover i {
-            transform: scale(1.2);
-        }
-
-        .skill-category .icon-ai {
-            color: #f43f5e;
-        }
-
-        .skill-category .icon-dev {
-            color: #06b6d4;
-        }
-
-        .skill-category .icon-tools {
-            color: #f59e0b;
-        }
-
-        /* Experience Section (Updated for futuristic design) */
-        .experience-timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem 0;
-        }
-
-        .experience-timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
             width: 2px;
-            height: 100%;
-            background: var(--border-color);
-            transform: translateX(-50%);
-            z-index: 0;
-        }
-
-        .timeline-item {
-            display: grid;
-            grid-template-columns: 1fr 2px 1fr;
-            gap: 2rem;
-            align-items: center;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        @media (max-width: 768px) {
-            .timeline-item {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-
-            .experience-timeline::before {
-                left: 1rem;
-                transform: translateX(0);
-            }
-        }
-
-        .timeline-item:nth-child(even) .timeline-content {
-            grid-column: 3 / 4;
-        }
-
-        @media (max-width: 768px) {
-            .timeline-item:nth-child(even) .timeline-content {
-                grid-column: 1 / 2;
-            }
-        }
-
-        .timeline-item-center {
-            position: relative;
-            grid-column: 2 / 3;
-            width: 2px;
-            height: 100%;
-            background: var(--gradient-primary);
-            display: flex;
-            justify-content: center;
-        }
-
-        @media (max-width: 768px) {
-            .timeline-item-center {
-                display: none;
-            }
+            background: linear-gradient(to bottom, #6366f1, #06b6d4, transparent);
         }
 
         .timeline-dot {
-            width: 16px;
-            height: 16px;
-            background: var(--gradient-primary);
-            border: 2px solid var(--bg-card);
-            border-radius: var(--radius-full);
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1;
-            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
-            animation: dotGlow 2s ease-in-out infinite alternate;
+            left: -2.3rem;
+            top: 1.5rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: #030303;
+            border: 2px solid #06b6d4;
+            box-shadow: 0 0 10px #06b6d4;
+            z-index: 10;
         }
 
-        @keyframes dotGlow {
-            from {
-                box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
-            }
-
-            to {
-                box-shadow: 0 0 20px rgba(99, 102, 241, 0.8), 0 0 30px rgba(99, 102, 241, 0.3);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .timeline-dot {
-                left: -1rem;
-            }
-        }
-
-        .timeline-content {
-            background: var(--bg-card);
-            padding: 2rem;
-            border-radius: var(--radius-2xl);
-            box-shadow: var(--shadow-lg);
-            transition: all var(--transition-normal);
-            border: 1px solid var(--border-color);
+        /* Glitch Effect */
+        .glitch-wrapper {
             position: relative;
         }
 
-        .timeline-content:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-2xl);
-            border-color: var(--primary);
-        }
-
-        .timeline-content h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-content .role {
-            font-size: 1.125rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .timeline-content ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            gap: 0.5rem;
-        }
-
-        .timeline-content li {
-            position: relative;
-            padding-left: 1.5rem;
-            color: var(--text-secondary);
-        }
-
-        .timeline-content li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-size: 1.2rem;
-            line-height: 1;
-        }
-
-        /* Project card fixes */
-        #projects .project-card {
-            background: var(--bg-card);
-            border-radius: var(--radius-2xl);
-            box-shadow: var(--shadow-lg);
-            overflow: hidden;
-            transform: translateY(0);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        #projects .project-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: var(--shadow-2xl);
-        }
-
-        #projects .project-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        #projects .project-card .p-6 {
-            padding: 1.5rem;
-        }
-
-        #projects .project-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        #projects .project-card p {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        #projects .project-card .flex {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        #projects .project-card .tag {
-            background: var(--bg-tertiary);
-            color: var(--text-primary);
-            padding: 0.25rem 0.75rem;
-            border-radius: var(--radius-full);
-            font-size: 0.875rem;
-            font-weight: 600;
-        }
-
-        #projects .project-card .btn {
-            font-size: 0.9rem;
-            padding: 0.75rem 1.5rem;
-        }
-
-
-        /* Contact Section */
-        .contact {
-            background: var(--bg-primary);
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-        }
-
-        @media (min-width: 992px) {
-            .contact-content {
-                grid-template-columns: 1fr 1fr;
-                gap: 4rem;
-            }
-        }
-
-        .contact-info {
-            background: var(--bg-card);
-            border-radius: var(--radius-2xl);
-            padding: 3rem;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .contact-info h3 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .contact-info p {
-            color: var(--text-secondary);
-            margin-bottom: 2.5rem;
-            line-height: 1.6;
-            font-size: 1.125rem;
-        }
-
-        .contact-details {
-            margin-bottom: 2.5rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-            padding: 1.25rem;
-            background: var(--bg-tertiary);
-            border-radius: var(--radius-xl);
-            transition: all var(--transition-normal);
-            cursor: pointer;
-        }
-
-        .contact-item:hover {
-            transform: translateX(10px);
-            box-shadow: var(--shadow-md);
-            background: var(--bg-primary);
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-primary);
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.25rem;
-            flex-shrink: 0;
-        }
-
-        .contact-item div {
-            flex: 1;
-        }
-
-        .contact-item strong {
-            display: block;
-            color: var(--text-primary);
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-            font-size: 1rem;
-        }
-
-        .contact-item p {
-            color: var(--text-secondary);
-            margin: 0;
-            font-size: 0.9rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            width: 50px;
-            height: 50px;
-            background: var(--bg-tertiary);
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-primary);
-            text-decoration: none;
-            transition: all var(--transition-bounce);
-            font-size: 1.25rem;
-        }
-
-        .social-link:hover {
-            transform: scale(1.1) rotate(10deg);
-            background: var(--gradient-primary);
-            color: white;
-            box-shadow: var(--shadow-glow);
-        }
-
-        .contact-form {
-            background: var(--bg-card);
-            border-radius: var(--radius-2xl);
-            padding: 3rem;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .form-group {
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1.25rem;
-            border: 2px solid var(--border-color);
-            border-radius: var(--radius-xl);
-            background: var(--bg-tertiary);
-            color: var(--text-primary);
-            font-family: var(--font-sans);
-            font-size: 1rem;
-            transition: all var(--transition-normal);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
-            background: var(--bg-primary);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-group label {
-            position: absolute;
-            top: 1.25rem;
-            left: 1.25rem;
-            color: var(--text-tertiary);
-            transition: all var(--transition-normal);
-            pointer-events: none;
-            background: transparent;
-            padding: 0 0.5rem;
-        }
-
-        .form-group input:focus+label,
-        .form-group textarea:focus+label,
-        .form-group input:not(:placeholder-shown)+label,
-        .form-group textarea:not(:placeholder-shown)+label {
-            top: -0.75rem;
-            left: 1rem;
-            font-size: 0.875rem;
-            color: var(--primary);
-            font-weight: 600;
-            background: var(--bg-card);
+        /* Navigation Glass */
+        .nav-glass {
+            background: rgba(3, 3, 3, 0.5);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
     </style>
 </head>
 
-<body data-theme="light">
-    <div class="loading-screen">
-        <div class="loading-particles"></div>
-        <div class="loading-logo">TC</div>
-        <div class="loading-spinner">
-            <div class="loading-ring"></div>
-            <div class="loading-ring"></div>
-            <div class="loading-ring"></div>
-        </div>
-        <div class="loading-text">Loading Portfolio...</div>
-        <div class="loading-progress">
-            <div class="loading-progress-bar"></div>
-        </div>
-    </div>
+<body class="antialiased selection:bg-accent selection:text-white">
 
-    <div class="scroll-progress"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
 
-    <div class="sparkle-container"></div>
+    <!-- Particle Background -->
+    <div id="tsparticles"></div>
 
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">TC</a>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#hero" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li>
-                    <button id="themeToggle" class="theme-toggle">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </li>
-            </ul>
-            <button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 nav-glass" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-black font-mono tracking-tighter text-white hover:text-accent transition-colors">
+                TARUN<span class="text-primary">.</span>
+            </a>
+            
+            <div class="hidden md:flex space-x-10 items-center">
+                <a href="#about" class="text-gray-400 hover:text-white text-sm font-bold tracking-widest uppercase transition-colors link-hover">About</a>
+                <a href="#skills" class="text-gray-400 hover:text-white text-sm font-bold tracking-widest uppercase transition-colors link-hover">Skills</a>
+                <a href="#experience" class="text-gray-400 hover:text-white text-sm font-bold tracking-widest uppercase transition-colors link-hover">Experience</a>
+                <a href="#projects" class="text-gray-400 hover:text-white text-sm font-bold tracking-widest uppercase transition-colors link-hover">Projects</a>
+                <a href="#contact" class="px-6 py-2.5 rounded-none border border-white/20 hover:border-accent hover:bg-accent/10 text-white text-sm font-bold uppercase tracking-widest transition-all link-hover">Contact</a>
+            </div>
         </div>
     </nav>
 
-    <section id="hero" class="hero">
-        <div class="hero-bg">
-            <div class="hero-bg-gradient"></div>
-            <div class="hero-bg-grid"></div>
-            <div class="hero-shape hero-shape-1"></div>
-            <div class="hero-shape hero-shape-2"></div>
-            <div class="hero-shape hero-shape-3"></div>
-        </div>
-        <div class="container hero-content">
-            <div class="hero-text">
-                <p class="hero-subtitle">Hello, I'm</p>
-                <h1 class="hero-title">Ramineni Tarun Chowdary <span class="highlight"></span></h1>
-                <p class="hero-description">
-                    A passionate <span class="font-bold">AI Engineer</span> and <span class="font-bold">Frontend
-                        Developer</span> dedicated to building innovative and user-centric digital experiences.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">
-                        <i class="fas fa-code"></i> View Projects
-                    </a>
-                    <a href="#contact" class="btn btn-secondary">
-                        <i class="fas fa-envelope"></i> Get In Touch
-                    </a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="profile-container">
-                    <div class="profile-ring"></div>
-                    <div class="avatar">
-                        <img src="https://placehold.co/200x200/6366f1/FFFFFF?text=TC" alt="Profile Avatar"
-                            class="w-full h-full rounded-full object-cover p-2">
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Text Content -->
+                <div class="lg:col-span-8 z-10" data-aos="fade-up" data-aos-duration="1200">
+                    <p class="text-accent font-mono tracking-widest uppercase mb-4 text-sm md:text-base border-l-2 border-accent pl-4">Hello, I am</p>
+                    <h1 class="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-4 leading-none glitch-wrapper text-outline">
+                        RAMINENI
+                    </h1>
+                    <h1 class="text-6xl md:text-8xl lg:text-[7rem] font-black tracking-tighter mb-6 leading-none">
+                        TARUN <span class="text-gradient">CHOWDARY</span>
+                    </h1>
+                    
+                    <div class="text-xl md:text-3xl font-light text-gray-300 mb-10 h-10 font-mono">
+                        <span id="typed-text"></span>
                     </div>
-                    <div class="floating-elements">
-                        <div class="floating-tech" style="top: 0; right: 20%;"><i class="fab fa-react"></i></div>
-                        <div class="floating-tech" style="top: 60%; right: -10%;"><i class="fab fa-python"></i></div>
-                        <div class="floating-tech" style="bottom: 0; left: 20%;"><i class="fas fa-brain"></i></div>
-                        <div class="floating-tech" style="top: 20%; left: -10%;"><i class="fab fa-js"></i></div>
+
+                    <div class="flex flex-wrap gap-6">
+                        <a href="#projects" class="magnetic-btn px-10 py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-gray-200 transition-colors flex items-center group">
+                            Explore Work 
+                            <i class="fas fa-arrow-right ml-3 transform group-hover:translate-x-2 transition-transform"></i>
+                        </a>
+                        <a href="#contact" class="magnetic-btn px-10 py-4 glass-panel text-white font-bold uppercase tracking-widest hover:bg-white/10 transition-colors flex items-center border border-white/10 group">
+                            <i class="fab fa-github mr-3 transform group-hover:scale-125 transition-transform"></i> GitHub
+                        </a>
                     </div>
                 </div>
+
+                <!-- Abstract Visual -->
+                <div class="lg:col-span-4 hidden lg:block relative z-0" data-aos="zoom-in" data-aos-duration="1500" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.5">
+                    <div class="w-full aspect-square glass-panel rounded-full relative overflow-hidden flex items-center justify-center group border border-white/10 shadow-[0_0_50px_rgba(99,102,241,0.2)]">
+                        <!-- Simulated AI/Code core -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-primary/40 via-transparent to-accent/40 mix-blend-overlay"></div>
+                        <div class="w-3/4 h-3/4 rounded-full border border-white/5 animate-[spin_10s_linear_infinite] flex items-center justify-center">
+                            <div class="w-1/2 h-1/2 rounded-full border border-accent/30 animate-[spin_5s_linear_infinite_reverse] flex items-center justify-center">
+                                <i class="fas fa-brain text-5xl text-white opacity-80 group-hover:scale-110 transition-transform duration-500 group-hover:text-primary"></i>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1000&auto=format&fit=crop')] bg-cover opacity-10 mix-blend-screen"></div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <p class="scroll-text">Scroll Down</p>
-            <div class="scroll-arrow">
-                <div class="scroll-dot"></div>
+
+        <div class="absolute bottom-10 left-6 flex items-center gap-4 rotate-90 origin-left">
+            <span class="text-xs uppercase tracking-widest text-gray-500 font-mono">Scroll Down</span>
+            <div class="w-20 h-[1px] bg-gray-600 overflow-hidden relative">
+                <div class="absolute top-0 left-0 h-full w-full bg-accent animate-[marquee_2s_linear_infinite]"></div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <header class="section-header">
-                <p class="section-subtitle">Who Am I?</p>
-                <h2 class="section-title">A Bit About Me</h2>
-                <div class="section-divider"></div>
-                <p class="section-description">
-                    I'm a passionate AI Engineer and Frontend Developer with a knack for transforming complex problems
-                    into elegant, intuitive, and efficient solutions. My journey in tech has been driven by curiosity
-                    and a desire to build impactful products.
-                </p>
-            </header>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="about-description">
-                        I'm a passionate Computer Science student specializing in AI & ML with deep expertise in Prompt
-                        Engineering and Frontend Development. Currently pursuing B.Tech from KKR & KSR Institute of
-                        Technology and Sciences with a CGPA of 7.5, I'm dedicated to bridging the gap between
-                        cutting-edge AI technology and practical applications. </p>
-                    <p class="about-description">
-                        Concurrently, as a Frontend Developer, I craft visually appealing and highly interactive user
-                        interfaces using **React.js, JavaScript, and Tailwind CSS**. I believe that a great product is a
-                        fusion of cutting-edge technology and exceptional user experience.
+    <!-- Infinite Marquee Separator -->
+    <div class="marquee-container my-12" data-aos="fade-in">
+        <div class="marquee-content font-mono text-2xl font-bold uppercase tracking-widest text-transparent" style="-webkit-text-stroke: 1px rgba(255,255,255,0.4);">
+            AI ENGINEER <span class="text-primary mx-8">•</span> FRONTEND DEVELOPER <span class="text-accent mx-8">•</span> PROMPT ENGINEERING <span class="text-primary mx-8">•</span> UI/UX DESIGN <span class="text-accent mx-8">•</span> AI ENGINEER <span class="text-primary mx-8">•</span> FRONTEND DEVELOPER <span class="text-accent mx-8">•</span> PROMPT ENGINEERING <span class="text-primary mx-8">•</span> UI/UX DESIGN <span class="text-accent mx-8">•</span>
+        </div>
+    </div>
+
+    <!-- About & Bento Grid -->
+    <section id="about" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-20">
+                <h2 class="text-6xl md:text-8xl font-black text-outline mb-4">ABOUT</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6 auto-rows-[200px]">
+                
+                <!-- Main Bio -->
+                <div class="md:col-span-4 lg:col-span-4 row-span-2 glass-panel p-10 flex flex-col justify-center relative overflow-hidden group" data-aos="fade-up" data-tilt data-tilt-max="2" data-tilt-glare="true" data-tilt-max-glare="0.2">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[80px]"></div>
+                    <i class="fas fa-quote-left text-4xl text-white/10 absolute top-10 left-10"></i>
+                    <h3 class="text-3xl font-bold mb-6 mt-4">The Convergence of AI & Design</h3>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-4 max-w-2xl font-light">
+                        I am a Computer Science student at KKR & KSR Institute of Technology and Sciences (CGPA: 7.5), specializing in Artificial Intelligence & Machine Learning.
                     </p>
-                    <p class="about-description">
-                        I am constantly exploring new technologies and methodologies, always striving to optimize
-                        performance, enhance scalability, and create delightful user journeys. My goal is to bridge the
-                        gap between complex AI models and accessible, engaging applications.
+                    <p class="text-gray-300 text-lg leading-relaxed max-w-2xl font-light">
+                        My true passion lies in bridging the gap between cutting-edge AI models and accessible human interfaces. I leverage React.js, Tailwind CSS, and advanced Prompt Engineering to build digital experiences that are not only intelligent but visually stunning.
                     </p>
                 </div>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <i class="fas fa-project-diagram text-4xl mb-4 gradient-text"></i>
-                        <div class="stat-number gradient-text">5</div>
-                        <p class="text-xl font-medium text-text-secondary">Projects Completed</p>
-                    </div>
-                    <div class="stat-card">
-                        <i class="fas fa-tasks text-4xl mb-4 gradient-text"></i>
-                        <div class="stat-number gradient-text">35</div>
-                        <p class="text-xl font-medium text-text-secondary">Mannuel workload reduction</p>
-                    </div>
-                    <div class="stat-card">
-                        <i class="fas fa-award text-4xl mb-4 gradient-text"></i>
-                        <div class="stat-number gradient-text">7</div>
-                        <p class="text-xl font-medium text-text-secondary">Certifications</p>
+
+                <!-- Stat 1 -->
+                <div class="md:col-span-2 lg:col-span-2 row-span-1 glass-panel p-8 flex flex-col justify-center items-center text-center group" data-aos="fade-up" data-aos-delay="100" data-tilt>
+                    <h4 class="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-2 group-hover:scale-110 transition-transform">5+</h4>
+                    <p class="text-xs uppercase tracking-widest text-gray-400 font-bold">Projects Delivered</p>
+                </div>
+
+                <!-- Stat 2 -->
+                <div class="md:col-span-2 lg:col-span-2 row-span-1 glass-panel p-8 flex flex-col justify-center items-center text-center group" data-aos="fade-up" data-aos-delay="200" data-tilt>
+                    <h4 class="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary mb-2 group-hover:scale-110 transition-transform">35%</h4>
+                    <p class="text-xs uppercase tracking-widest text-gray-400 font-bold">Manual Workload Reduced</p>
+                </div>
+
+                <!-- Location -->
+                <div class="md:col-span-2 lg:col-span-3 row-span-1 glass-panel p-8 relative overflow-hidden" data-aos="fade-up" data-aos-delay="300" data-tilt>
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-20 grayscale mix-blend-screen group-hover:grayscale-0 group-hover:opacity-40 transition-all duration-700"></div>
+                    <div class="relative z-10 flex items-center h-full gap-6">
+                        <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center backdrop-blur-md bg-black/20">
+                            <i class="fas fa-globe-asia text-2xl text-accent"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-gray-400 font-bold mb-1">Location</p>
+                            <p class="text-xl font-bold">Guntur, India</p>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Stat 3 -->
+                <div class="md:col-span-2 lg:col-span-3 row-span-1 glass-panel p-8 flex items-center justify-between group" data-aos="fade-up" data-aos-delay="400" data-tilt>
+                    <div>
+                        <p class="text-xs uppercase tracking-widest text-gray-400 font-bold mb-1">Certifications</p>
+                        <h4 class="text-3xl font-bold">7+ Earned</h4>
+                    </div>
+                    <i class="fas fa-certificate text-5xl text-white/10 group-hover:text-accent/50 transition-colors"></i>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <section id="skills" class="py-16 px-4">
-        <div class="container mx-auto">
-            <header class="section-header">
-                <p class="section-subtitle">What I Do</p>
-                <h2 class="section-title">My Skills & Expertise</h2>
-                <div class="section-divider"></div>
-            </header>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>AI & Machine Learning</h3>
-                    <ul>
-                        <li><i class="fas fa-microchip"></i> Python (TensorFlow)</li>
-                        <li><i class="fas fa-language"></i> Natural Language Processing (NLP)</li>
-                        <li><i class="fas fa-eye"></i> Computer Vision</li>
-                        <li><i class="fas fa-database"></i> My SQL</li>
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-20 text-right">
+                <h2 class="text-6xl md:text-8xl font-black text-outline mb-4">EXPERTISE</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- AI -->
+                <div class="glass-panel p-10 border-t-2 border-t-primary group" data-aos="fade-up" data-tilt data-tilt-max="5" data-tilt-glare="true" data-tilt-max-glare="0.1">
+                    <i class="fas fa-network-wired text-4xl text-primary mb-8 block group-hover:scale-110 transition-transform origin-left"></i>
+                    <h3 class="text-2xl font-bold mb-6">AI & ML</h3>
+                    <ul class="space-y-4 font-mono text-sm text-gray-400">
+                        <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-primary mr-4"></span> Python (TensorFlow)</li>
+                        <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-primary mr-4"></span> NLP & Prompt Engineering</li>
+                        <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-primary mr-4"></span> Computer Vision (YOLOv8)</li>
+                        <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-primary mr-4"></span> CNN Architecture</li>
                     </ul>
                 </div>
-                <div class="skill-category">
-                    <h3>Frontend Development</h3>
-                    <ul>
-                        <li><i class="fab fa-js-square"></i> JavaScript (ES6+)</li>
-                        <li><i class="fab fa-react"></i> React.js</li>
-                        <li><i class="fab fa-html5"></i> HTML5 / CSS3</li>
-                        <li><i class="fas fa-mobile-alt"></i> Tailwind CSS</li>
-                        <li><i class="fas fa-palette"></i>Canvas</li>
+
+                <!-- Frontend -->
+                <div class="glass-panel p-10 border-t-2 border-t-accent group" data-aos="fade-up" data-aos-delay="100" data-tilt data-tilt-max="5" data-tilt-glare="true" data-tilt-max-glare="0.1">
+                    <i class="fas fa-layer-group text-4xl text-accent mb-8 block group-hover:scale-110 transition-transform origin-left"></i>
+                    <h3 class="text-2xl font-bold mb-6">Frontend</h3>
+                    <ul class="space-y-4 font-mono text-sm text-gray-400">
+                        <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-accent mr-4"></span> React.js</li>
+                        <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-accent mr-4"></span> JavaScript (ES6+)</li>
+                        <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-accent mr-4"></span> Tailwind CSS</li>
+                        <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-accent mr-4"></span> HTML5 / Canvas</li>
                     </ul>
                 </div>
-                <div class="skill-category">
-                    <h3>Tools & Databases</h3>
-                    <ul>
-                        <li><i class="fab fa-github"></i> Git / GitHub</li>
-                        <li><i class="fab fa-docker"></i> Docker</li>
-                        <li><i class="fas fa-cloud"></i> AWS / Google Cloud</li>
-                        <li><i class="fas fa-book"></i> Jupyter Notebooks</li>
+
+                <!-- Tools -->
+                <div class="glass-panel p-10 border-t-2 border-t-secondary group" data-aos="fade-up" data-aos-delay="200" data-tilt data-tilt-max="5" data-tilt-glare="true" data-tilt-max-glare="0.1">
+                    <i class="fas fa-database text-4xl text-secondary mb-8 block group-hover:scale-110 transition-transform origin-left"></i>
+                    <h3 class="text-2xl font-bold mb-6">Tools & DB</h3>
+                    <ul class="space-y-4 font-mono text-sm text-gray-400">
+                        <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-secondary mr-4"></span> Git & GitHub</li>
+                        <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-secondary mr-4"></span> Docker</li>
+                        <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-secondary mr-4"></span> Supabase / MySQL</li>
+                        <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-secondary mr-4"></span> AWS / GCP</li>
                     </ul>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <section id="experience" class="about">
-        <div class="container">
-            <header class="section-header">
-                <p class="section-subtitle">Recognition</p>
-                <h2 class="section-title">Achievements & Experience</h2>
-                <div class="section-divider"></div>
-            </header>
-            <div class="experience-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Chat-bot development Champion</h3>
-                        <p class="role">AI-QUEST: National level Technical Symposium</p>
-                        <ul>
-                            <li>Developed and deployed HR Chatbot models.</li>
-                            <li>Collaborated with team to archive the process with 4 Team memders.</li>
-                            <li>Successfully managed project timeline, coordinated development efforts, and delivered
-                                the complete solution within 1 day.</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-item-center">
-                        <div class="timeline-dot"></div>
-                    </div>
-                    <div></div>
-                </div>
-                <div class="timeline-item">
-                    <div></div>
-                    <div class="timeline-item-center">
-                        <div class="timeline-dot"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>AI Intern - DRDL/DRDO</h3>
-                        <p class="role">Defence Research and Development Laboratory (Jan 2026 - Present)</p>
-                        <ul>
-                            <li>Working as an AI Intern at DRDL/DRDO on advanced defense technologies.</li>
-                            <li>Developing an <strong>AI-Based Drone Detection System</strong> using YOLOv8 and CNN.
-                            </li>
-                            <li>Designed models to detect and classify drones in real-time surveillance scenarios.</li>
-                            <li>Improving detection accuracy and optimizing performance for real-world applications.
-                            </li>
-                        </ul>
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-24 relative z-10">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="mb-20">
+                <h2 class="text-6xl md:text-8xl font-black text-outline mb-4">HISTORY</h2>
+            </div>
+
+            <div class="timeline-container pl-10">
+                
+                <!-- Item 1 -->
+                <div class="mb-16 relative" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-panel p-8 md:p-10 hover:border-primary/50 transition-colors group">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h3 class="text-2xl md:text-3xl font-bold text-white group-hover:text-primary transition-colors">AI Intern</h3>
+                            <span class="font-mono text-accent text-sm mt-2 md:mt-0 px-3 py-1 bg-accent/10 border border-accent/20 rounded-full w-fit">Jan 2026 - Present</span>
+                        </div>
+                        <h4 class="text-lg text-gray-400 mb-6 font-mono uppercase tracking-widest">DRDL / DRDO</h4>
+                        <p class="text-gray-300 leading-relaxed font-light">
+                            Developing an advanced AI-Based Drone Detection System utilizing YOLOv8 and CNN architectures. Designing models specifically to detect and classify drones in real-time surveillance scenarios, continuously optimizing performance metrics for critical real-world defense applications.
+                        </p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Conference application</h3>
-                        <p class="role">Developed a International Conference application for Department</p>
-                        <ul>
-                            <li>Done a web application for International conference.</li>
-                            <li>Which enhances the Skills in Development.</li>
-                            <li>Appreciation from KITS college for developing approach.</li>
-                        </ul>
+
+                <!-- Item 2 -->
+                <div class="mb-16 relative" data-aos="fade-up">
+                    <div class="timeline-dot" style="border-color: #ec4899; box-shadow: 0 0 10px #ec4899;"></div>
+                    <div class="glass-panel p-8 md:p-10 hover:border-secondary/50 transition-colors group">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h3 class="text-2xl md:text-3xl font-bold text-white group-hover:text-secondary transition-colors">Chat-bot Dev Champion</h3>
+                            <span class="font-mono text-secondary text-sm mt-2 md:mt-0 px-3 py-1 bg-secondary/10 border border-secondary/20 rounded-full w-fit">National Level</span>
+                        </div>
+                        <h4 class="text-lg text-gray-400 mb-6 font-mono uppercase tracking-widest">AI-QUEST Symposium</h4>
+                        <p class="text-gray-300 leading-relaxed font-light">
+                            Engineered and deployed robust HR Chatbot models. Collaborated closely with a 4-member team to architecture the process. Successfully managed the project timeline, coordinated complex development efforts, and delivered the complete, functional solution within an intensive 1-day timeframe.
+                        </p>
                     </div>
-                    <div class="timeline-item-center">
-                        <div class="timeline-dot"></div>
-                    </div>
-                    <div></div>
                 </div>
+
+                <!-- Item 3 -->
+                <div class="relative" data-aos="fade-up">
+                    <div class="timeline-dot" style="border-color: #6366f1; box-shadow: 0 0 10px #6366f1;"></div>
+                    <div class="glass-panel p-8 md:p-10 hover:border-primary/50 transition-colors group">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h3 class="text-2xl md:text-3xl font-bold text-white group-hover:text-primary transition-colors">Lead Developer</h3>
+                            <span class="font-mono text-primary text-sm mt-2 md:mt-0 px-3 py-1 bg-primary/10 border border-primary/20 rounded-full w-fit">KITS College</span>
+                        </div>
+                        <h4 class="text-lg text-gray-400 mb-6 font-mono uppercase tracking-widest">Conference Application</h4>
+                        <p class="text-gray-300 leading-relaxed font-light">
+                            Spearheaded the development of a comprehensive web application for an International Conference hosted by the department. Enhanced overall development skills while receiving formal appreciation from KITS college for the innovative technical approach and seamless execution.
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-16 px-4">
-        <div class="container mx-auto">
-            <header class="section-header">
-                <p class="section-subtitle">My Creations</p>
-                <h2 class="section-title">Featured Projects</h2>
-                <div class="section-divider"></div>
-            </header>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div
-                    class="bg-card rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 project-card">
-                    <img src="https://placehold.co/600x400/818CF8/FFFFFF?text=AI+Chatbot" alt="AI Chatbot Thumbnail"
-                        class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold text-text-primary mb-2">HR Chatbot</h3>
-                        <p class="text-text-secondary text-base mb-4">
-                            Designed sophisticated prompt patterns for a Gemini API + Supabase-based chatbot to handle
-                            internal HR queries efficiently, reducing manual workload by 45%.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Gemini
-                                API</span>
-                            <span
-                                class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Supabase</span>
-                            <span
-                                class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Chatbot</span>
-                            <span
-                                class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
+    <!-- Projects -->
+    <section id="projects" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-20 text-right">
+                <h2 class="text-6xl md:text-8xl font-black text-outline mb-4">PROJECTS</h2>
+            </div>
+
+            <!-- Huge Project Cards -->
+            <div class="space-y-24">
+                
+                <!-- Project 1 -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center group" data-aos="fade-up">
+                    <div class="order-2 lg:order-1 relative z-10">
+                        <div class="flex flex-wrap gap-3 mb-6 font-mono text-xs font-bold tracking-widest uppercase">
+                            <span class="text-primary border border-primary/30 px-3 py-1 rounded-full">Gemini API</span>
+                            <span class="text-emerald-400 border border-emerald-400/30 px-3 py-1 rounded-full">Supabase</span>
+                            <span class="text-white border border-white/30 px-3 py-1 rounded-full">JS</span>
                         </div>
-                        <a href="https://tarun2180.github.io/HR-Chatbot/"
-                            class="inline-block bg-primary text-white px-5 py-2 rounded-full hover:bg-indigo-700 transition duration-300 mr-2 shadow-md"
-                            target="_blank"><i class="fas fa-external-link-alt"></i> View Project</a>
-                        <a href="https://github.com/tarun2180/HR-Chatbot/"
-                            class="inline-block bg-gray-200 text-gray-800 px-5 py-2 rounded-full hover:bg-gray-300 transition duration-300"
-                            target="_blank">GitHub</a>
+                        <h3 class="text-4xl md:text-5xl font-black mb-6 group-hover:text-primary transition-colors">Intelligent HR Chatbot</h3>
+                        <p class="text-gray-400 text-lg mb-8 font-light leading-relaxed">
+                            Designed sophisticated prompt patterns for a Gemini API and Supabase-based chatbot architecture. This intelligent system handles internal HR queries with high precision, successfully reducing manual workload by an impressive 45%.
+                        </p>
+                        <div class="flex gap-6">
+                            <a href="https://tarun2180.github.io/HR-Chatbot/" target="_blank" class="magnetic-btn text-white font-bold tracking-widest uppercase hover:text-primary transition-colors border-b border-primary pb-1">Live Preview</a>
+                            <a href="https://github.com/tarun2180/HR-Chatbot/" target="_blank" class="magnetic-btn text-gray-500 font-bold tracking-widest uppercase hover:text-white transition-colors border-b border-transparent hover:border-white pb-1">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2 relative" data-tilt data-tilt-max="5" data-tilt-glare="true" data-tilt-max-glare="0.2">
+                        <div class="aspect-[4/3] w-full glass-panel overflow-hidden border border-white/10 p-2">
+                            <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700" alt="HR Chatbot">
+                        </div>
+                        <div class="absolute -inset-4 border border-primary/20 -z-10 group-hover:border-primary/50 transition-colors duration-700"></div>
                     </div>
                 </div>
 
-                <div
-                    class="bg-card rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 project-card">
-                    <img src="https://placehold.co/600x400/93C5FD/FFFFFF?text=E-commerce+UI"
-                        alt="E-commerce UI Thumbnail" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold text-text-primary mb-2">Modern E-commerce Platform UI</h3>
-                        <p class="text-text-secondary text-base mb-4">
-                            Designed and developed a responsive and intuitive e-commerce user interface with HTML/CSS,
-                            which reducing manual workload by 45% and usig voice assistance, focusing on a seamless
-                            shopping experience and clean aesthetics.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Vapi
-                                AI</span>
-                            <span
-                                class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML/CSS</span>
-                            <span
-                                class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
-                            <span
-                                class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Google
-                                Sheets</span>
+                <!-- Project 2 -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center group" data-aos="fade-up">
+                    <div class="relative" data-tilt data-tilt-max="5" data-tilt-glare="true" data-tilt-max-glare="0.2">
+                        <div class="aspect-[4/3] w-full glass-panel overflow-hidden border border-white/10 p-2">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700" alt="E-Commerce UI">
                         </div>
-                        <a href="eco-mitra.netlify.app"
-                            class="inline-block bg-primary text-white px-5 py-2 rounded-full hover:bg-indigo-700 transition duration-300 mr-2 shadow-md"
-                            target="_blank"><i class="fas fa-external-link-alt"></i>View Project</a>
-                        <a href="https://github.com/tarun2180/eco.MITRA"
-                            class="inline-block bg-gray-200 text-gray-800 px-5 py-2 rounded-full hover:bg-gray-300 transition duration-300"
-                            target="_blank">GitHub</a>
+                        <div class="absolute -inset-4 border border-secondary/20 -z-10 group-hover:border-secondary/50 transition-colors duration-700"></div>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="flex flex-wrap gap-3 mb-6 font-mono text-xs font-bold tracking-widest uppercase">
+                            <span class="text-secondary border border-secondary/30 px-3 py-1 rounded-full">Vapi AI</span>
+                            <span class="text-white border border-white/30 px-3 py-1 rounded-full">Tailwind CSS</span>
+                        </div>
+                        <h3 class="text-4xl md:text-5xl font-black mb-6 group-hover:text-secondary transition-colors">Voice-Assisted E-Commerce</h3>
+                        <p class="text-gray-400 text-lg mb-8 font-light leading-relaxed">
+                            A highly responsive and intuitive e-commerce user interface integrated with voice assistance technology. Focused on delivering a seamless, futuristic shopping experience while maintaining extremely clean, modern aesthetics.
+                        </p>
+                        <div class="flex gap-6">
+                            <a href="https://eco-mitra.netlify.app" target="_blank" class="magnetic-btn text-white font-bold tracking-widest uppercase hover:text-secondary transition-colors border-b border-secondary pb-1">Live Preview</a>
+                            <a href="https://github.com/tarun2180/eco.MITRA" target="_blank" class="magnetic-btn text-gray-500 font-bold tracking-widest uppercase hover:text-white transition-colors border-b border-transparent hover:border-white pb-1">GitHub</a>
+                        </div>
                     </div>
                 </div>
 
-                <div
-                    class="bg-card rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 project-card">
-                    <img src="https://placehold.co/600x400/A78BFA/FFFFFF?text=Festivo" alt="Festivo"
-                        class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold text-text-primary mb-2">Event Management</h3>
-                        <p class="text-text-secondary text-base mb-4">
-                            This project is a modern, responsive event management application designed to streamline the
-                            planning, organization, and execution of academic and professional events such as
-                            conferences and symposiums. It features an intuitive interface that enables users to manage
-                            schedules, track attendees, assign roles, and automate notifications.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
-                            <span
-                                class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML/CSS</span>
-                            <span
-                                class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Gemini
-                                ai API</span>
-                            <span
-                                class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">App
-                                Script</span>
+                <!-- Project 3 -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center group" data-aos="fade-up">
+                    <div class="order-2 lg:order-1 relative z-10">
+                        <div class="flex flex-wrap gap-3 mb-6 font-mono text-xs font-bold tracking-widest uppercase">
+                            <span class="text-orange-500 border border-orange-500/30 px-3 py-1 rounded-full">App Script</span>
+                            <span class="text-white border border-white/30 px-3 py-1 rounded-full">JavaScript</span>
                         </div>
-                        <a href="https://festivo-s.netlify.app/"
-                            class="inline-block bg-primary text-white px-5 py-2 rounded-full hover:bg-indigo-700 transition duration-300 mr-2 shadow-md"
-                            target="_blank">View Project</a>
-                        <a href="https://github.com/tarun2180/festivo"
-                            class="inline-block bg-gray-200 text-gray-800 px-5 py-2 rounded-full hover:bg-gray-300 transition duration-300"
-                            target="_blank">GitHub</a>
+                        <h3 class="text-4xl md:text-5xl font-black mb-6 group-hover:text-orange-500 transition-colors">Festivo - Event Management</h3>
+                        <p class="text-gray-400 text-lg mb-8 font-light leading-relaxed">
+                            A modern, highly responsive event management application designed to streamline the complex planning, organization, and execution of academic and professional events. Features include automated notifications, attendee tracking, and role assignments.
+                        </p>
+                        <div class="flex gap-6">
+                            <a href="https://festivo-s.netlify.app/" target="_blank" class="magnetic-btn text-white font-bold tracking-widest uppercase hover:text-orange-500 transition-colors border-b border-orange-500 pb-1">Live Preview</a>
+                            <a href="https://github.com/tarun2180/festivo" target="_blank" class="magnetic-btn text-gray-500 font-bold tracking-widest uppercase hover:text-white transition-colors border-b border-transparent hover:border-white pb-1">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2 relative" data-tilt data-tilt-max="5" data-tilt-glare="true" data-tilt-max-glare="0.2">
+                        <div class="aspect-[4/3] w-full glass-panel overflow-hidden border border-white/10 p-2">
+                            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700" alt="Festivo">
+                        </div>
+                        <div class="absolute -inset-4 border border-orange-500/20 -z-10 group-hover:border-orange-500/50 transition-colors duration-700"></div>
                     </div>
                 </div>
 
-                <div
-                    class="bg-card rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 project-card">
-                    <img src="https://placehold.co/600x400/A78BFA/FFFFFF?text=ICISCCT-26" alt="ICISCCT-26"
-                        class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold text-text-primary mb-2">ICISCCT-26</h3>
-                        <p class="text-text-secondary text-base mb-4">
-                            Me and my co partner has done this conference web.The platform was developed with a focus on
-                            user experience, scalability, and seamless accessibility, and has been used successfully for
-                            departmental-level conferences at KITS College.
-                        </p>
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
-                            <span
-                                class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML/CSS</span>
-                            <span
-                                class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">CMT</span>
-                            <span
-                                class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">tawk.to</span>
-                            <span
-                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Canva</span>
-                            <span
-                                class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Google
-                                Map API</span>
+                <!-- Project 4: ICISCCT-26 -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center group" data-aos="fade-up">
+                    <div class="relative" data-tilt data-tilt-max="5" data-tilt-glare="true" data-tilt-max-glare="0.2">
+                        <div class="aspect-[4/3] w-full glass-panel overflow-hidden border border-white/10 p-2">
+                            <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700" alt="ICISCCT-26">
                         </div>
-                        <a href="https://kits-conference.netlify.app/"
-                            class="inline-block bg-primary text-white px-5 py-2 rounded-full hover:bg-indigo-700 transition duration-300 mr-2 shadow-md"
-                            target="_blank">View Project</a>
-                        <a href="#"
-                            class="inline-block bg-gray-200 text-gray-800 px-5 py-2 rounded-full hover:bg-gray-300 transition duration-300"
-                            target="_blank">GitHub</a>
+                        <div class="absolute -inset-4 border border-teal-500/20 -z-10 group-hover:border-teal-500/50 transition-colors duration-700"></div>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="flex flex-wrap gap-2 mb-6 font-mono text-xs font-bold tracking-widest uppercase">
+                            <span class="text-indigo-400 border border-indigo-400/30 px-3 py-1 rounded-full bg-indigo-400/10">JavaScript</span>
+                            <span class="text-pink-400 border border-pink-400/30 px-3 py-1 rounded-full bg-pink-400/10">HTML/CSS</span>
+                            <span class="text-cyan-400 border border-cyan-400/30 px-3 py-1 rounded-full bg-cyan-400/10">CMT</span>
+                            <span class="text-indigo-300 border border-indigo-300/30 px-3 py-1 rounded-full bg-indigo-300/10">tawk.to</span>
+                            <span class="text-yellow-400 border border-yellow-400/30 px-3 py-1 rounded-full bg-yellow-400/10">Canva</span>
+                            <span class="text-red-400 border border-red-400/30 px-3 py-1 rounded-full bg-red-400/10">Google Map API</span>
+                        </div>
+                        <h3 class="text-4xl md:text-5xl font-black mb-6 group-hover:text-teal-400 transition-colors">ICISCCT-26</h3>
+                        <p class="text-gray-400 text-lg mb-8 font-light leading-relaxed">
+                            Me and my co-partner have done this conference web. The platform was developed with a focus on user experience, scalability, and seamless accessibility, and has been used successfully for departmental-level conferences at KITS College.
+                        </p>
+                        <div class="flex gap-6">
+                            <a href="https://kits-conference.netlify.app/" target="_blank" class="magnetic-btn text-white font-bold tracking-widest uppercase hover:text-teal-400 transition-colors border-b border-teal-400 pb-1">View Project</a>
+                            <a href="#" target="_blank" class="magnetic-btn text-gray-500 font-bold tracking-widest uppercase hover:text-white transition-colors border-b border-transparent hover:border-white pb-1">GitHub</a>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header scroll-reveal">
-                <div class="section-subtitle">Get in touch</div>
-                <h2 class="section-title">Let's Connect</h2>
-                <div class="section-divider"></div>
-                <p class="section-description">
-                    Ready to collaborate on the next big innovation?
-                </p>
+    <!-- Infinite Marquee Separator -->
+    <div class="marquee-container my-12" data-aos="fade-in">
+        <div class="marquee-content font-mono text-2xl font-bold uppercase tracking-widest text-transparent" style="-webkit-text-stroke: 1px rgba(255,255,255,0.4);">
+            LET'S COLLABORATE <span class="text-primary mx-8">•</span> INBOX IS OPEN <span class="text-accent mx-8">•</span> LET'S COLLABORATE <span class="text-primary mx-8">•</span> INBOX IS OPEN <span class="text-accent mx-8">•</span> LET'S COLLABORATE <span class="text-primary mx-8">•</span> INBOX IS OPEN <span class="text-accent mx-8">•</span> LET'S COLLABORATE <span class="text-primary mx-8">•</span> INBOX IS OPEN <span class="text-accent mx-8">•</span>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 relative z-10">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            
+            <h2 class="text-5xl md:text-8xl font-black mb-10" data-aos="fade-up">
+                HAVE AN <span class="text-outline hover:text-white transition-colors duration-500 cursor-none">IDEA?</span>
+            </h2>
+            
+            <p class="text-xl text-gray-400 font-light mb-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Whether you have an idea for an AI-powered application, need a stunning frontend interface, or just want to chat about tech, I'm ready.
+            </p>
+
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6" data-aos="fade-up" data-aos-delay="200">
+                <a href="mailto:tarunchoudaryramineni@gmail.com" class="magnetic-btn w-full md:w-auto px-12 py-5 bg-white text-black font-bold uppercase tracking-widest hover:bg-gray-200 transition-colors">
+                    tarunchoudaryramineni@gmail.com
+                </a>
+                <a href="tel:+919618182180" class="magnetic-btn w-full md:w-auto px-12 py-5 glass-panel text-white font-bold uppercase tracking-widest hover:bg-white/5 transition-colors border border-white/20">
+                    +91 9618182180
+                </a>
             </div>
-            <div class="contact-content">
-                <div class="contact-info scroll-reveal-left">
-                    <h3>Get In Touch</h3>
-                    <p>
-                        I'm always excited to discuss new opportunities, collaborate on innovative projects,
-                        or simply chat about the latest in AI and technology. Let's create something amazing together!
-                    </p>
 
-                    <div class="contact-details">
-                        <a href="tel:+919618182180" class="contact-item" style="text-decoration: none; color: inherit;">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <strong>Phone</strong>
-                                <p>+91 9618182180</p>
-                            </div>
-                        </a>
-
-                        <a href="mailto:tarunchoudaryramineni@gmail.com?subject=Inquiry from Website Portfolio"
-                            class="contact-item" style="text-decoration: none; color: inherit;" target="_blank">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <strong>Email</strong>
-                                <p>tarunchoudaryramineni@gmail.com</p>
-                            </div>
-                        </a>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <strong>Location</strong>
-                                <p>Guntur, Andhra Pradesh, India</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/tarun2180" class="social-link" title="GitHub"
-                            aria-label="Visit GitHub Profile" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/tarun-chowdary-175b4a351/" class="social-link"
-                            title="LinkedIn" aria-label="Visit LinkedIn Profile" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="mailto:tarunchoudaryramineni@gmail.com" class="social-link" title="Send Email"
-                            aria-label="Send Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <form id="contactForm" class="contact-form scroll-reveal-right"
-                    action="https://formsubmit.co/tarunchoudaryramineni@gmail.com" method="POST">
-                    <p>Unavailable right now soon develop</p>
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder=" " required>
-                        <label>Your Name</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder=" " required>
-                        <label>Your Email</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="subject" placeholder=" " required>
-                        <label>Subject</label>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" placeholder=" " rows="5" required></textarea>
-                        <label>Your Message</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-paper-plane"></i>
-                        Send Message
-                    </button>
-                </form>
+            <div class="mt-20 flex justify-center gap-10" data-aos="fade-up" data-aos-delay="300">
+                <a href="https://github.com/tarun2180" target="_blank" class="magnetic-btn text-2xl text-gray-500 hover:text-white transition-colors link-hover">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/tarun-chowdary-175b4a351/" target="_blank" class="magnetic-btn text-2xl text-gray-500 hover:text-primary transition-colors link-hover">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
             </div>
+
         </div>
     </section>
 
-
-    <footer class="bg-gray-900 text-white py-8 px-4 text-center">
-        <div class="container mx-auto">
-            <p>&copy; <span id="currentYear"></span> Ramineni Tarun Chowdary. All rights reserved.</p>
-            <div class="mt-4 text-sm text-gray-400">
-                Designed with <i class="fas fa-heart text-red-500"></i> by Ramineni Tarun Chowdary
-            </div>
+    <!-- Footer -->
+    <footer class="py-8 border-t border-white/10 relative z-10 bg-black/50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-gray-600 font-mono text-sm tracking-widest uppercase">
+                &copy; <span id="year"></span> RAMINENI TARUN CHOWDARY
+            </p>
+            <p class="text-gray-600 font-mono text-sm tracking-widest uppercase">
+                Crafted with <i class="fas fa-heart text-white/50 mx-1"></i>
+            </p>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    
+    <!-- tsParticles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@2.11.1/tsparticles.engine.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-basic@2.11.1/tsparticles.basic.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-interaction-particles-links@2.11.1/tsparticles.interaction.particles.links.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-move-base@2.11.1/tsparticles.move.base.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-shape-circle@2.11.1/tsparticles.shape.circle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-color@2.11.1/tsparticles.updater.color.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-opacity@2.11.1/tsparticles.updater.opacity.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-size@2.11.1/tsparticles.updater.size.min.js"></script>
+
+    <!-- VanillaTilt -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+
+    <!-- Typed.js -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Set current year in footer
-            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        // Custom Cursor Logic
+        const cursorDot = document.getElementById('cursor-dot');
+        const cursorOutline = document.getElementById('cursor-outline');
+        
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+            
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+            
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
 
-            // Loading screen logic
-            const loadingScreen = document.querySelector('.loading-screen');
-            setTimeout(() => {
-                loadingScreen.classList.add('hidden');
-                document.body.style.overflow = ''; // Re-enable scrolling
-            }, 3000); // Hide after 3 seconds (adjust as needed)
-
-            // Dynamic particle generation for loading screen
-            const particleContainer = document.querySelector('.loading-particles');
-            for (let i = 0; i < 50; i++) { // Generate 50 particles
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                particle.style.left = `${Math.random() * 100}vw`;
-                particle.style.animationDelay = `${Math.random() * 4}s`; // Random delay for animation
-                particleContainer.appendChild(particle);
-            }
-
-            // Navbar scroll effect
-            const navbar = document.getElementById('navbar');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
+        const links = document.querySelectorAll('a, .link-hover, .magnetic-btn');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursorOutline.style.width = '60px';
+                cursorOutline.style.height = '60px';
+                cursorOutline.style.backgroundColor = 'rgba(6, 182, 212, 0.1)';
+                cursorOutline.style.borderColor = 'transparent';
             });
-
-            // Mobile menu toggle
-            const hamburger = document.getElementById('hamburger');
-            const navMenu = document.getElementById('navMenu');
-            hamburger.addEventListener('click', () => {
-                hamburger.classList.toggle('active');
-                navMenu.classList.toggle('active');
-                // Disable/enable body scroll when menu is open/closed
-                if (navMenu.classList.contains('active')) {
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    document.body.style.overflow = '';
-                }
+            link.addEventListener('mouseleave', () => {
+                cursorOutline.style.width = '40px';
+                cursorOutline.style.height = '40px';
+                cursorOutline.style.backgroundColor = 'transparent';
+                cursorOutline.style.borderColor = 'rgba(6, 182, 212, 0.5)';
             });
+        });
 
-            // WhatsApp and Email Integration
+        // Typed.js Initialization
+        new Typed('#typed-text', {
+            strings: ['AI Engineer.', 'Frontend Developer.', 'Prompt Engineer.', 'Tech Enthusiast.'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true,
+            cursorChar: '_',
+        });
 
+        // AOS Initialization
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 1000,
+            easing: 'ease-out-cubic',
+        });
 
-            // Enhanced Form Handler with Email Integration
-            class FormHandler {
-                constructor() {
-                    this.form = document.getElementById('contactForm');
-                    this.init();
-                }
+        // Load tsParticles
+        (async () => {
+            await loadBasic(tsParticles);
+            await loadParticlesLinksInteraction(tsParticles);
+            await loadBaseMover(tsParticles);
+            await loadCircleShape(tsParticles);
+            await loadColorUpdater(tsParticles);
+            await loadOpacityUpdater(tsParticles);
+            await loadSizeUpdater(tsParticles);
 
-                init() {
-                    if (this.form) {
-                        this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+            await tsParticles.load("tsparticles", {
+                background: { color: { value: "transparent" } },
+                fpsLimit: 60,
+                interactivity: {
+                    events: {
+                        onHover: { enable: true, mode: "grab" },
+                        resize: true
+                    },
+                    modes: {
+                        grab: { distance: 140, links: { opacity: 0.5 } }
                     }
-                }
-
-                async handleSubmit(e) {
-                    e.preventDefault();
-
-                    const submitBtn = this.form.querySelector('button[type="submit"]');
-                    const originalHTML = submitBtn.innerHTML;
-
-                    submitBtn.innerHTML = '<span class="loading"></span> Sending...';
-                    submitBtn.disabled = true;
-
-                    // Get form data
-                    const formData = new FormData(this.form);
-                    const data = {
-                        name: formData.get('name'),
-                        email: formData.get('email'),
-                        subject: formData.get('subject'),
-                        message: formData.get('message')
-                    };
-
-                    try {
-                        // Send email using EmailJS or similar service
-                        await this.sendEmail(data);
-                        this.showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-                        this.form.reset();
-                    } catch (error) {
-                        console.error('Error sending email:', error);
-                        this.showNotification('Failed to send message. Please try again or contact me directly.', 'error');
-                    }
-
-                    submitBtn.innerHTML = originalHTML;
-                    submitBtn.disabled = false;
-                }
-
-                async sendEmail(data) {
-                    // Simulate email sending - replace with actual email service
-                    return new Promise((resolve) => {
-                        setTimeout(() => {
-                            // In a real implementation, you would integrate with:
-                            // - EmailJS
-                            // - Formspree
-                            // - Netlify Forms
-                            // - Your own backend API
-
-                            // For now, we'll create a mailto link as fallback
-                            const subject = encodeURIComponent(`Portfolio Contact: ${data.subject}`);
-                            const body = encodeURIComponent(
-                                `Name: ${data.name}\n` +
-                                `Email: ${data.email}\n` +
-                                `Subject: ${data.subject}\n\n` +
-                                `Message:\n${data.message}`
-                            );
-
-                            // Open default email client
-                            window.location.href = `mailto:tarunchoudaryramineni@gmail.com?subject=${subject}&body=${body}`;
-
-                            resolve();
-                        }, 2000);
-                    });
-                }
-
-                showNotification(message, type = 'info') {
-                    const notification = document.createElement('div');
-                    notification.style.cssText = `
-                    position: fixed;
-                    top: 20px;
-                    right: 20px;
-                    padding: 1rem 1.5rem;
-                    border-radius: 12px;
-                    color: white;
-                    font-weight: 600;
-                    z-index: 10000;
-                    transform: translateX(100%);
-                    transition: transform 0.3s ease;
-                    background: ${type === 'success' ? 'linear-gradient(135deg, #10b981 0%, #34d399 100%)' :
-                            type === 'error' ? 'linear-gradient(135deg, #ef4444 0%, #f87171 100%)' :
-                                'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)'};
-                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-                    max-width: 300px;
-                    font-size: 0.9rem;
-                `;
-                    notification.textContent = message;
-
-                    document.body.appendChild(notification);
-
-                    setTimeout(() => {
-                        notification.style.transform = 'translateX(0)';
-                    }, 100);
-
-                    setTimeout(() => {
-                        notification.style.transform = 'translateX(100%)';
-                        setTimeout(() => {
-                            if (notification.parentNode) {
-                                notification.parentNode.removeChild(notification);
-                            }
-                        }, 300);
-                    }, 4000);
-                }
-            }
-
-
-            // Close mobile menu when a link is clicked
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navMenu.classList.contains('active')) {
-                        hamburger.classList.remove('active');
-                        navMenu.classList.remove('active');
-                        document.body.style.overflow = ''; // Re-enable scrolling
-                    }
-                });
+                },
+                particles: {
+                    color: { value: "#ffffff" },
+                    links: {
+                        color: "#6366f1",
+                        distance: 150,
+                        enable: true,
+                        opacity: 0.2,
+                        width: 1
+                    },
+                    move: {
+                        direction: "none",
+                        enable: true,
+                        outModes: { default: "bounce" },
+                        random: false,
+                        speed: 1,
+                        straight: false
+                    },
+                    number: {
+                        density: { enable: true, area: 800 },
+                        value: 50
+                    },
+                    opacity: { value: 0.3 },
+                    shape: { type: "circle" },
+                    size: { value: { min: 1, max: 3 } }
+                },
+                detectRetina: true
             });
+        })();
 
-            // Theme toggle (Light/Dark Mode)
-            const themeToggle = document.getElementById('themeToggle');
-            const body = document.body;
+        // Footer Year
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-            // Check for saved theme in localStorage
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                body.setAttribute('data-theme', savedTheme);
-                if (savedTheme === 'dark') {
-                    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-                } else {
-                    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-                }
+        // Navbar effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-[0_4px_30px_rgba(0,0,0,0.5)]');
+                navbar.classList.add('bg-black/80');
             } else {
-                // Default to light theme if no preference saved
-                body.setAttribute('data-theme', 'light');
-                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-            }
-
-            themeToggle.addEventListener('click', () => {
-                if (body.getAttribute('data-theme') === 'light') {
-                    body.setAttribute('data-theme', 'dark');
-                    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    body.setAttribute('data-theme', 'light');
-                    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-                    localStorage.setItem('theme', 'light');
-                }
-            });
-
-            // Scroll progress bar logic
-            const scrollProgress = document.querySelector('.scroll-progress');
-            window.addEventListener('scroll', () => {
-                const totalHeight = document.body.scrollHeight - window.innerHeight;
-                const progress = (window.scrollY / totalHeight) * 100;
-                scrollProgress.style.width = `${progress}%`;
-            });
-
-            // Dynamic sparkle generation for main content (only on larger screens for performance)
-            if (window.innerWidth > 768) { // Adjust breakpoint as needed
-                const mainSparkleContainer = document.querySelector('.sparkle-container');
-                for (let i = 0; i < 30; i++) { // Generate 30 particles
-                    const sparkle = document.createElement('div');
-                    sparkle.classList.add('sparkle');
-                    sparkle.style.left = `${Math.random() * 100}vw`;
-                    sparkle.style.animationDelay = `${Math.random() * 3}s`;
-                    sparkle.style.animationDuration = `${3 + Math.random() * 2}s`; // Vary animation duration
-                    mainSparkleContainer.appendChild(sparkle);
-                }
+                navbar.classList.remove('shadow-[0_4px_30px_rgba(0,0,0,0.5)]');
+                navbar.classList.remove('bg-black/80');
             }
         });
     </script>
 </body>
-
 </html>
